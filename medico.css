@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 12vh 88vh ;
+    grid-template-areas: "h h"
+                         "m a";
+}
+header {
+    grid-area: h; 
+    background: #739b76;
+    color: #fff;
+    font-family: cursive;
+    text-align: center;
+}
+
+h1 {
+    font-size: calc(2px + 3vw);
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2vw;
+}
+h2#Atual{
+    border: solid;
+    border-radius: 10px;
+}
+
+h2#Outro{
+    text-decoration:underline;
+}
+
+main {
+    grid-area: m;
+    background: red;
+}
+
+aside {
+    grid-area: a;
+    background: yellow;
+    text-align: center;
+}
