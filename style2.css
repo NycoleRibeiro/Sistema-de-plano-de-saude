@@ -1,4 +1,4 @@
-* {
+html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 .container {
     display: grid;
-
+    grid-template-columns: 3fr 1fr;
 }
 header {
     display: grid;
@@ -30,4 +30,9 @@ main {
     height: calc(100vh - 100px);
     background: red;
 
+}
+
+aside {
+    background: yellow;
+    height: 100px;
 }
