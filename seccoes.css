@@ -7,7 +7,7 @@ html, body {
 .container {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 12vh 88vh ;
+    grid-template-rows: 11vh 89vh ;
     grid-template-areas: "h h"
                          "m a";
 }
@@ -19,9 +19,8 @@ header {
     text-align: center;
 }
 
-h1 {
-    font-size: calc(2px + 3vw);
-    font-weight: bold;
+img{
+    width: 26vh;
 }
 
 h2{
