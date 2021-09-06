@@ -12,16 +12,15 @@ body {
 header {
     display: grid;
     width: 100%;
-    height: 100px;
+    height: 11vh;
     background: #739b76;
     color: #fff;
     justify-content: center;
     font-family: cursive;
 }
 
-h1 {
-    font-size: calc(2px + 3vw);
-    font-weight: bold;
+img{
+    width: 26vh;
 }
 
 .nav_tabs {
