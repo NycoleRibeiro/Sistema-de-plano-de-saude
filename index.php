@@ -12,6 +12,10 @@
         <img src="images/logoHpsCompleto.png"></img>
     </header>
 
+    <?php 
+        $loginError = "";
+    ?>
+
     <main>
         <nav class="nav_tabs">
             <ul>
@@ -20,7 +24,7 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                     <label for="tab1">Paciente</label>
                     <div class="content_tabs">
-                        <form action="php/index_page.php" method="post">
+                        <form action="php/paciente.php" method="post">
                             <p>CPF</p>
                             <input type="text" name="cpf">
                             <p>Senha</p>
@@ -34,7 +38,7 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                     <label for="tab2">Médico</label>
                     <div class="content_tabs">
-                        <form action="php/index_page.php" method="post">
+                        <form action="php/medico.php" method="post">
                             <p>CRM</p>
                             <input type="text" name="crm">
                             <p>Senha</p>
@@ -48,7 +52,7 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                     <label for="tab3">Laborátorio</label>
                     <div class="content_tabs">
-                        <form action="php/index_page.php" method="post">
+                        <form action="php/laboratorio.php" method="post">
                             <p>CNPJ</p>
                             <input type="text" name="cnpj">
                             <p>Senha</p>
@@ -62,15 +66,17 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="php/index_page.php" method="post">
+                        <form action="php/admin.php" method="post">
                             <p>Login</p>
                             <input type="text" name="login">
                             <p>Senha</p>
-                            <input type="password" name="senha">
+                            <input type="password" name="password">
+                            <span class="error"><?php echo $loginError ?></span>
                             <input class="btn_ok" type="submit" value="OK">
                         </form>
                     </div>
                 </li>
+            </ul>
         </nav>
     </main>
 </body>
