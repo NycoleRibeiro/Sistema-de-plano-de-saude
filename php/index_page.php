@@ -12,5 +12,7 @@ class Adm {
     }
 
     public function cadastrar_paciente($nome, $cpf, $data_nasc, $sexo, $telefone, $email, $endereco) {
-        
+    
+    }
 }
+
