@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 11vh 89vh ;
+    grid-template-areas: "h h"
+                         "m a";
+}
+
+header {
+    grid-area: h; 
+    background: #739b76;
+    color: #fff;
+    font-family: cursive;
+    text-align: center;
+}
+
+img{
+    width: 26vh;
+}
+
+main {
+    grid-area: m;
+    background: #ddd;
+}
+
+aside {
+    grid-area: a;
+    background: #497046;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3em;
+}
+
+li {
+    padding: 0.5em;
+    margin: 0.5em;
+    background: #739b76;
+    color: #fff;
+    border-radius: 0.5em;
+}
+
+li:hover {
+    background: #385836;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn_cadastro:checked ~ label {
+    background: #4d7e57;
+    color: white;
+}
+
+.btn_cadastro {
+    display: none;
+}
+
+.content_tabs {
+    margin-top: 19px;
+    border-top: 5px solid #4d7e57;
+    background: #fff;
+    display: none;
+    position: absolute;
+    height: 320px;
+    width: 594px;
+    left: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.btn_cadastro:checked ~ .content_tabs {
+    display: block;
+}
