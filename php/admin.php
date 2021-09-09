@@ -17,11 +17,10 @@ class Admin {
 }
 
 $log = new Admin();
-$login = $_POST['login'];
-$password = $_POST['password'];
+$login = $_GET['login'];
+$password = $_GET['senha'];
 if ($log->check_login($login, $password)) {
     header('Location: ../administrador.html');
 } else {
     $loginError = 'Login ou senha incorretos!';
-    header('Location: ../index.php?loginError='.$loginError);
 }

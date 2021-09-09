@@ -12,10 +12,6 @@
         <img src="images/logoHpsCompleto.png"></img>
     </header>
 
-    <?php 
-        $loginError = "";
-    ?>
-
     <main>
         <nav class="nav_tabs">
             <ul>
@@ -66,11 +62,11 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="php/admin.php" method="post">
+                        <form action="php/admin.php" method="get">
                             <p>Login</p>
                             <input type="text" name="login">
                             <p>Senha</p>
-                            <input type="password" name="password">
+                            <input type="password" name="senha">
                             <span class="error"><?php echo $loginError ?></span>
                             <input class="btn_ok" type="submit" value="OK">
                         </form>
