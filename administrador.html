@@ -13,28 +13,56 @@
             <img src="images/logoHpsCompleto.png"></img>
         </header>
 
+        <main>
+            <div class="paciente">
+                <h1>Paciente</h1>
+                <form action="paciente.php" method="post">
+                    <table>
+                        <tr>
+                            <td>Nome:</td>
+                            <td><input type="text" name="nome" required></td>
+                        </tr>
+                        <tr>
+                            <td>CPF:</td>
+                            <td><input type="text" name="cpf" required></td>
+                        </tr>
+                        <tr>
+                            <td>Data de Nascimento:</td>
+                            <td><input type="date" name="dataNascimento" required></td>
+                        </tr>
+                        <tr>
+                            <td>Telefone:</td>
+                            <td><input type="text" name="telefone" required></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td><input type="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td>Senha:</td>
+                            <td><input type="password" name="senha" required></td>
+                        </tr>
+                        <tr>
+                            <td>Gênero:</td>
+                            <td>
+                                <input type="radio" name="genero" value="masculino" required>Masculino
+                                <input type="radio" name="genero" value="feminino" required>Feminino
+                                <input type="radio" name="genero" value="outro" required>Outro
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </main>
+
         <aside>
             <nav>
                 <ul>
-                    <li>
-                        <input type="radio" name="cadastro_labs" class="btn_cadastro" id="cadastro_labs">
-                        <label for="tab1">Cadastrar Laboratório</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="cadastro_medico" class="btn_cadastro" id="cadastro_medico">
-                        <label for="tab2">Cadastrar Médicos</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="cadastro_paciente" class="btn_cadastro" id="cadastro_paciente">
-                        <label for="tab3">Cadastrar Pacientes</label>
-                    </li>
+                    <li>Cadastrar Laboratório</li>
+                    <li>Cadastrar Médicos</li>
+                    <li>Cadastrar Pacientes</li>
                 </ul>
             </nav>
         </aside>
-
-        <main>
-            
-        </main>
     </div>
 </body>
 </html>
