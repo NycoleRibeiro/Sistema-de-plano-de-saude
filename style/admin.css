@@ -1,0 +1,43 @@
+h1 {
+    font-size: 1.5em;
+    color: #FFF;
+    margin: 1vw 0 0 1vw;
+    padding: 10px 10px;
+    background-color: rgb(64, 82, 57);
+    width: 80vw;
+    border-radius: 10px;
+}
+
+table {
+    width: 80vw;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 10px 10px;
+}
+
+td {
+    padding: 10px 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+td input {
+    width: 70vw;
+    height: 4vh;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    text-align: right;
+    border-bottom: 0px solid #CCC;
+}
+
+.btn_cadastrar {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(64, 82, 57); 
+    color: #FFF;
+    border: 0px solid #CCC;
+    border-radius: 10px;
+    cursor: pointer;
+}
