@@ -62,12 +62,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="php/admin.php" method="get">
+                        <form>
                             <p>Login</p>
-                            <input type="text" name="login">
+                            <input id="valiadmin" type="text" name="login">
                             <p>Senha</p>
-                            <input type="password" name="senha">
-                            <input class="btn_ok" type="submit" value="OK">
+                            <input id="senhaadmin" type="password" name="senha">
+                            <input class="btn_ok" type="submit" value="OK" onclick="validacao()" >
                         </form>
                     </div>
                 </li>
