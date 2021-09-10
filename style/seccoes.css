@@ -55,8 +55,12 @@ li {
 }
 
 li:hover {
-    background: #385836;
+    background: #496647;
     transition: 0.2s;
     cursor: pointer;
 }
 
+#atual {
+    background: #385836;
+    color: #fff;
+}
