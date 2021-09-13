@@ -17,7 +17,7 @@
         <main>
             <div id="medico" class="cadastro">
                 <h1>Médico</h1>
-                <form action="" method="post">
+                <form action="php/admin.php" method="post">
                     <table>
                         <tr>
                             <td>Nome:</td>
@@ -48,7 +48,9 @@
                             <td><input type="password" name="senha" required></td>
                         </tr>
                         <tr>
-                            <td class="btn" colspan="2"><input class="btn_cadastrar" type="submit" value="Cadastrar"></td>
+                            <td class="btn" colspan="2">
+                                <input name="cadastro_med" class="btn_cadastrar" type="submit" value="Cadastrar">
+                            </td>
                         </tr>
                     </table>
                 </form>

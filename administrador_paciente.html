@@ -17,7 +17,7 @@
         <main>
             <div id="paciente" class="cadastro">
                 <h1>Paciente</h1>
-                <form action="" method="post">
+                <form action="php/admin.php" method="post">
                     <table>
                         <tr>
                             <td>Nome:</td>
@@ -29,11 +29,11 @@
                         </tr>
                         <tr>
                             <td>Gênero:</td>
-                            <td><input type="text" name="genero" required></td>
+                            <td><input type="text" name="sexo" required></td>
                         </tr>
                         <tr>
                             <td>Data de Nascimento:</td>
-                            <td><input type="date" name="dataNascimento" required></td>
+                            <td><input type="date" name="data_nasc" required></td>
                         </tr>
                         <tr>
                             <td>Telefone:</td>
@@ -52,7 +52,9 @@
                             <td><input type="password" name="senha" required></td>
                         </tr>
                         <tr>
-                            <td class="btn" colspan="2"><input class="btn_cadastrar" type="submit" value="Cadastrar"></td>
+                            <td class="btn" colspan="2">
+                                <input name="cadastro_pac" class="btn_cadastrar" type="submit" value="Cadastrar">
+                            </td>
                         </tr>
                     </table>
                 </form>
