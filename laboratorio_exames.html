@@ -15,8 +15,34 @@
     </header>
 
     <main>
-       
+        <div>
+            <h1>Cadastro de Exames</h1>
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td>Data:</td>
+                        <td><input type="date" name="data" required></td>
+                    </tr>
+                    <tr>
+                        <td>CPF do Paciente:</td>
+                        <td><input type="text" name="cpf" required></td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de Exame:</td>
+                        <td><input type="text" name="exame" required></td>
+                    </tr>
+                    <tr class="result">
+                        <td>Resultado:</td>
+                        <td><input type="text" name="resultado" required></td>
+                    </tr>
+                    <tr>
+                        <td class="btn" colspan="2"><input class="btn_cadastrar" type="submit" value="Cadastrar"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </main>
+
     <aside>
         <nav>
             <ul>
