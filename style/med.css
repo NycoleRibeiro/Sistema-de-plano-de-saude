@@ -1,0 +1,23 @@
+.receito td {
+    vertical-align: top;
+}
+
+.receito td input{
+    height: 20vh;
+}
+
+.btn {
+    text-align: right;
+    border-bottom: 0px solid #CCC;
+}
+
+.btn_cadastrar, .btn_editar {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(64, 82, 57); 
+    color: #FFF;
+    border: 0px solid #CCC;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
