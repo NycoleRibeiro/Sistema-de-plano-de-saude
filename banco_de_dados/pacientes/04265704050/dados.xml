@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paciente>
+            <nome>NYCOLE RIBEIRO PEREIRA</nome>
+            <cpf>04265704050</cpf>
+            <sexo>F</sexo>
+            <nascimento>1999-07-19</nascimento>
+            <telefone>+5553991147808</telefone>
+            <endereco>R ENGENHEIRO SÉRGIO LUIZ PERNIGOTTI, 123</endereco>
+            <email>rpnyck@gmail.com</email>
+            <senha>1234</senha>
+        </paciente>
