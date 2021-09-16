@@ -46,11 +46,87 @@ function cadastrar_paciente($nome, $cpf, $data_nasc, $sexo, $telefone, $email, $
 }
 
 function cadastrar_medico($nome, $crm, $especialidade, $telefone, $email, $endereco, $senha) {
-
+    $caminho = "../banco_de_dados/medicos";
+    $nome_pasta = $crm;
+    $caminho_completo = $caminho . "/" . $nome_pasta;
+    if (is_dir($caminho_completo)) {
+        echo "Já existe um médico com esse CRM";
+    } else {
+        $pessoa =
+        "<?xml version='1.0' encoding='UTF-8'?>
+        <medico>
+            <nome></nome>
+            <crm></crm>
+            <especialidade></especialidade>
+            <telefone></telefone>
+            <endereco></endereco>
+            <email></email>
+            <senha></senha>
+        </medico>";
+        mkdir($caminho_completo);
+        $arquivo = fopen($caminho_completo . "/dados.xml", "w");
+        fwrite($arquivo, $pessoa);
+        fclose($arquivo);
+        $xml = simplexml_load_file($caminho_completo . "/dados.xml");
+        if ($xml === false) {
+            echo "Erro ao carregar XML";
+            foreach(libxml_get_errors() as $error) {
+                echo "<br>", $error->message;
+            }
+        } else {
+            $xml->nome = $nome;
+            $xml->crm = $crm;
+            $xml->especialidade = $especialidade;
+            $xml->telefone = $telefone;
+            $xml->endereco = $endereco;
+            $xml->email = $email;
+            $xml->senha = $senha;
+            $save = simplexml_import_dom($xml);
+            $save->saveXML($caminho_completo . "/dados.xml");
+        }
+    }
 }
 
 function cadastrar_laboratório($nome, $cnpj, $tipo_exame, $telefone, $email, $endereco, $senha) {
-
+    $caminho = "../banco_de_dados/laboratorios";
+    $nome_pasta = $cnpj;
+    $caminho_completo = $caminho . "/" . $nome_pasta;
+    if (is_dir($caminho_completo)) {
+        echo "Já existe um laboratório com esse CNPJ";
+    } else {
+        $pessoa =
+        "<?xml version='1.0' encoding='UTF-8'?>
+        <laboratorio>
+            <nome></nome>
+            <cnpj></cnpj>
+            <tipo_exame></tipo_exame>
+            <telefone></telefone>
+            <endereco></endereco>
+            <email></email>
+            <senha></senha>
+        </laboratorio>";
+        mkdir($caminho_completo);
+        $arquivo = fopen($caminho_completo . "/dados.xml", "w");
+        fwrite($arquivo, $pessoa);
+        fclose($arquivo);
+        $xml = simplexml_load_file($caminho_completo . "/dados.xml");
+        if ($xml === false) {
+            echo "Erro ao carregar XML";
+            foreach(libxml_get_errors() as $error) {
+                echo "<br>", $error->message;
+            }
+        } else {
+            $xml->nome = $nome;
+            $xml->cnpj = $cnpj;
+            $xml->tipo_exame = $tipo_exame;
+            $xml->telefone = $telefone;
+            $xml->endereco = $endereco;
+            $xml->email = $email;
+            $xml->senha = $senha;
+            $save = simplexml_import_dom($xml);
+            $save->saveXML($caminho_completo . "/dados.xml");
+        }
+    }
 }
 
 
