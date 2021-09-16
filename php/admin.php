@@ -1,7 +1,7 @@
 <?php
 
 function cadastrar_paciente($nome, $cpf, $data_nasc, $sexo, $telefone, $email, $endereco, $senha) {
-    $caminho = "banco_de_dados/pacientes";
+    $caminho = "../banco_de_dados/pacientes";
     $nome_pasta = $cpf;
     $caminho_completo = $caminho . "/" . $nome_pasta;
     if (is_dir($caminho_completo)) {
@@ -24,7 +24,7 @@ function cadastrar_paciente($nome, $cpf, $data_nasc, $sexo, $telefone, $email, $
         fwrite($arquivo, $pessoa);
         fclose($arquivo);
 
-        $xml = simplexml_load_file($cpf . "/dados.xml");
+        $xml = simplexml_load_file($caminho_completo . "/dados.xml");
         if ($xml === false) {
             echo "Erro ao carregar XML";
             foreach(libxml_get_errors() as $error) {
@@ -40,7 +40,7 @@ function cadastrar_paciente($nome, $cpf, $data_nasc, $sexo, $telefone, $email, $
             $xml->email = $email;
             $xml->senha = $senha;
             $save = simplexml_import_dom($xml);
-            $save->saveXML($cpf . "/dados.xml");
+            $save->saveXML($caminho_completo . "/dados.xml");
         }
     }
 }
