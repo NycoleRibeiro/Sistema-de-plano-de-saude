@@ -17,7 +17,7 @@
     <main>
         <div>
             <h1>Cadastro de Consultas</h1>
-            <form action="" method="post">
+            <form action="medico.php" method="post">
                 <table>
                     <tr>
                         <td>Data:</td>
@@ -27,16 +27,16 @@
                         <td>CPF do Paciente:</td>
                         <td><input type="text" name="cpf" required></td>
                     </tr>
-                    <tr class="receito">
-                        <td>Receito:</td>
-                        <td><input type="text" name="receito" required></td>
-                    </tr>
-                    <tr class="receito">
-                        <td>Observação:</td>
-                        <td><input type="text" name="observacao" required></td>
+                    <tr class="bigArea">
+                        <td>Receita:</td>
+                        <td><textarea name="receita" rows="10" cols="50" required></textarea></td>
                     </tr>
                     <tr>
-                        <td class="btn" colspan="2"><input class="btn_cadastrar" type="submit" value="Cadastrar"></td>
+                        <td>Observação:</td>
+                        <td><textarea name="observacao" rows="5" cols="50"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="btn" colspan="2"><input name="cadastrarConsulta" class="btn_cadastrar" type="submit" value="Cadastrar"></td>
                     </tr>
                 </table>
             </form>
