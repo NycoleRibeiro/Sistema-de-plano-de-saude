@@ -1,11 +1,3 @@
-.receito td {
-    vertical-align: top;
-}
-
-.receito td input{
-    height: 20vh;
-}
-
 .btn {
     text-align: right;
     border-bottom: 0px solid #CCC;

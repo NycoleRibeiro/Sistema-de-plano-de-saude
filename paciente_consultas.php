@@ -15,15 +15,32 @@
     </header>
 
     <main>
-       
+        <div>
+            <h1>Consulta do dia: <span id="diaConsulta"></span></h1>
+            <table>
+                <tr>
+                    <td>Médico:</td>
+                    <td id="doctor"></td>
+                </tr>
+                <tr>
+                    <td>Paciente:</td>
+                    <td id="paciente"></td>
+                </tr>
+                <tr>
+                    <td>Receita:</td>
+                    <td id="receita"></td>
+                </tr>
+            </table>
+        </div>
     </main>
+
     <aside>
         <nav>
             <ul>
-                <a href="paciente_consultas.html">
+                <a href="paciente_consultas.php">
                     <li id="atual">Consultas</li>
                 </a>
-                <a href="paciente_exames.html">
+                <a href="paciente_exames.php">
                     <li>Exames</li>
                 </a>                   
             </ul>
