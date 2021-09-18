@@ -20,12 +20,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                     <label for="tab1">Paciente</label>
                     <div class="content_tabs">
-                        <form action="" method="post">
+                        <form action="paciente_consultas.html" method="get">
                             <p>CPF</p>
-                            <input type="text" name="cpf">
+                            <input type="text" id="valicpf" name="cpf" placeholder="Digite seu CPF" required>
                             <p>Senha</p>
-                            <input type="password" name="senha">
-                            <input class="btn_ok" type="submit" value="OK">
+                            <input type="password" id="senhacpf" name="senha" placeholder="Digite sua senha" required>
+                            <input class="btn_ok" type="submit" name="enviar" value="OK" onclick="validacaopac()">
                         </form>
                     </div>
                 </li>
@@ -34,12 +34,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                     <label for="tab2">Médico</label>
                     <div class="content_tabs">
-                        <form action="" method="post">
+                        <form action="medico_dados.html" method="get">
                             <p>CRM</p>
-                            <input type="text" name="crm">
+                            <input type="text" id="valicrm" name="crm" placeholder="Digite seu CRM" required>
                             <p>Senha</p>
-                            <input type="password" name="senha">
-                            <input class="btn_ok" type="submit" value="OK">
+                            <input type="password" id="senhacrm" name="senha" placeholder="Digite sua senha" required>
+                            <input class="btn_ok" type="submit" value="OK" onclick="validacaomed()">
                         </form>
                     </div>
                 </li>
@@ -48,12 +48,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                     <label for="tab3">Laborátorio</label>
                     <div class="content_tabs">
-                        <form action="" method="post">
+                        <form action="laboratorio_dados.html" method="get">
                             <p>CNPJ</p>
-                            <input type="text" name="cnpj">
+                            <input type="text" id="valicnpj" name="cnpj" placeholder="Digite seu CNPJ" required>
                             <p>Senha</p>
-                            <input type="password" name="senha">
-                            <input class="btn_ok" type="submit" value="OK">
+                            <input type="password" id="senhacnpj" name="senha" placeholder="Digite sua senha" required>
+                            <input class="btn_ok" type="submit" value="OK" onclick="validacaolab()">
                         </form>
                     </div>
                 </li>
@@ -62,12 +62,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form method="post">
+                        <form action="administrador_paciente.html" method="get">
                             <p>Login</p>
-                            <input id="valiadmin" type="text" name="login">
+                            <input id="valiadmin" type="text" name="login" placeholder="Digite seu login" required>
                             <p>Senha</p>
-                            <input id="senhaadmin" type="password" name="senha">
-                            <input class="btn_ok" type="submit" value="OK" onclick="validacao()" >
+                            <input id="senhaadmin" type="password" name="senha" placeholder="Digite sua senha" required>
+                            <input class="btn_ok" type="submit" value="OK" onclick="validacaoadmin()" >
                         </form>
                     </div>
                 </li>
@@ -75,4 +75,5 @@
         </nav>
     </main>
 </body>
+<script src="js/Validacao.js"></script>
 </html>
