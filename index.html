@@ -62,12 +62,12 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="administrador_paciente.html" method="get">
+                        <form action="administrador_lab.html" method="get" onsubmit="validacaoadmin()">
                             <p>Login</p>
                             <input id="valiadmin" type="text" name="login" placeholder="Digite seu login" required>
                             <p>Senha</p>
                             <input id="senhaadmin" type="password" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" type="submit" value="OK" onclick="validacaoadmin()" >
+                            <input class="btn_ok" type="submit" value="OK" >
                         </form>
                     </div>
                 </li>

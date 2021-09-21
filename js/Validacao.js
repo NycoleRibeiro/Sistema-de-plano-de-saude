@@ -1,12 +1,17 @@
 function validacaoadmin() {
     let loginadmin = document.querySelector("#valiadmin").value;
     let senhaadmin = document.querySelector("#senhaadmin").value;
-    if (loginadmin == "admin" && senhaadmin == "admin"){
-        alert("dados corretos")
-    } else{
-        alert("dados incorretos")
+    if (loginadmin != "admin" ){
+        alert("Login incorreto");
+        document.querySelector("#valiadmin").focus();
+        return false;
+    } else if (senhaadmin != "admin") {
+        alert("Senha incorreta");
+        document.querySelector("#senhaadmin").focus();
+        return false;
+    }else {
+        return true;
     }
-    
 }
 function validacaopac() {
     let logincpf = document.querySelector("#valicpf").value;
