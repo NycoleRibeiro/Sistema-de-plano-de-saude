@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medico>
+                    <nome>Meredith Grey</nome>
+                    <crm>54321</crm>
+                    <especialidade>Cirurgia Geral</especialidade>
+                    <telefone>(53) 991242567</telefone>
+                    <endereco>Rua Fagundes Fernandes, 345</endereco>
+                    <email>grey@med.com</email>
+                    <senha>1234</senha>
+                </medico>

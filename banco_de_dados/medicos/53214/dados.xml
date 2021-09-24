@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medico>
+                    <nome>Alex Karev</nome>
+                    <crm>53214</crm>
+                    <especialidade>Pediatria</especialidade>
+                    <telefone>(53) 991234567</telefone>
+                    <endereco>Rua Hugh Jackman, 987</endereco>
+                    <email>karev@med.com</email>
+                    <senha>1234</senha>
+                </medico>
