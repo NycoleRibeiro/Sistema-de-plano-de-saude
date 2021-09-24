@@ -18,28 +18,44 @@ function validacaopac() {
     let logincpf = document.querySelector("#valicpf").value;
     let senhacpf = document.querySelector("#senhacpf").value;
     
-    
-    let url = "../banco_de_dados/pacientes/" + logincpf + "/dados.xml"
-    $.get(url)
+    let cpf = "../banco_de_dados/pacientes/" + logincpf + "/dados.xml"
+    $.get(cpf)
         .done(function() { 
             // exists code 
-            alert("Não existe")
+
+            if (senhacpf == X){}
         }).fail(function() { 
             // not exists code
-            alert("Não exite")
+            alert("Paciente não cadastrado.")
         })
 }
 function validacaomed() {
     let logincrm = document.querySelector("#valicrm").value;
     let senhacrm = document.querySelector("#senhacrm").value;
-    if (logincrm == "*" && senhacrm == "*"){
-        
-    }
+
+    let crm = "../banco_de_dados/medicos/" + logincrm + "/dados.xml"
+    $.get(crm)
+        .done(function() { 
+            // exists code 
+
+            if (senhacrm == X){}
+        }).fail(function() { 
+            // not exists code
+            alert("Medico não cadastrado.")
+        })
 }
 function validacaolab() {
     let logincnpj = document.querySelector("#valicnpj").value;
     let senhacnpj = document.querySelector("#senhacnpj").value;
-    if (logincnpj == "*" && senhacnpj == "*"){
-        
-    }
+    
+    let cnpj = "../banco_de_dados/laboratorios/" + logincnpj + "/dados.xml"
+    $.get(cnpj)
+        .done(function() { 
+            // exists code 
+
+            if (senhacnpj == X){}
+        }).fail(function() { 
+            // not exists code
+            alert("Laboratório não cadastrado.")
+        })
 }
