@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<laboratorio>
+            <nome>GRAM LABORATORIO DE ANALISES CLINICAS LTDA</nome>
+            <cnpj>920020880001</cnpj>
+            <tipo_exame>Clínico</tipo_exame>
+            <telefone>(53) 3236-2177</telefone>
+            <endereco>Av. Atlântica, 448 - sala 101 - Rio Grande, RS, 96207-662</endereco>
+            <email>gram@labs.com</email>
+            <senha>1234</senha>
+        </laboratorio>

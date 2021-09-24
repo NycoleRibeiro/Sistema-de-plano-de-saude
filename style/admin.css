@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .btn {
     text-align: right;
     border-bottom: 0px solid #CCC;
@@ -6,10 +11,38 @@
 .btn_cadastrar {
     width: 100px;
     height: 30px;
-    background-color: rgb(64, 82, 57); 
+    background-color: #405239; 
     color: #FFF;
     border: 0px solid #CCC;
     border-radius: 10px;
     cursor: pointer;
 }
 
+.sucess {
+    font-size: 1.5em;
+    color: #FFF;
+    background-color: #405239;
+    width: 100vw;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.alert {
+    font-size: 1.5em;
+    color: #FFF;
+    background-color: #6e0404;
+    width: 100vw;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.btn_voltar {
+    width: 100px;
+    height: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #353535;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 2vh;
+}

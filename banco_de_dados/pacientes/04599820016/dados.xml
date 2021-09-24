@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paciente>
+                    <nome>Bruno Santos</nome>
+                    <cpf>04599820016</cpf>
+                    <sexo>M</sexo>
+                    <nascimento>1999-03-05</nascimento>
+                    <telefone>(51)999261999</telefone>
+                    <endereco>Rua Horacio Borges, 276</endereco>
+                    <email>santhos.bsr@gmail.com</email>
+                    <senha>1234</senha>
+                </paciente>
