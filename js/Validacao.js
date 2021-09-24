@@ -17,10 +17,8 @@ function validacaoadmin() {
 function validacaopac() {
     let logincpf = document.querySelector("#valicpf").value;
     let senhacpf = document.querySelector("#senhacpf").value;
-    if (logincpf == "*" && senhacpf == "*"){
-        
-    }
-
+    
+    
     let url = "../banco_de_dados/pacientes/" + logincpf + "/dados.xml"
     $.get(url)
         .done(function() { 
