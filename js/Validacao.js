@@ -20,8 +20,10 @@ function validacaopac() {
     
     let cpf = "../banco_de_dados/pacientes/" + logincpf + "/dados.xml"
     $.get(cpf)
-        .done(function() { 
-            // exists code 
+        .done(function(senha) { 
+            // exists code  
+            $(senha).find()
+            
             let xmlcpfsenha = 1;
             if (senhacpf != xmlcpfsenha){
                 alert("Senha incorreta");
