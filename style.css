@@ -97,7 +97,7 @@ input {
     margin: 10px 0;
 }
 
-.btn_ok {
+.btn_ok, .btn_true_ok{
     position: absolute;
     background: #4d7e57;
     font-weight: bold;
@@ -109,8 +109,13 @@ input {
     right: 1vw;
 }
 
-.btn_ok:hover {
+.btn_ok:hover, .btn_true_ok:hover {
     background: #88bd93;
     cursor: pointer;
     transition: 0.3s;
+}
+
+
+.desaparecer{
+    display: none;
 }
