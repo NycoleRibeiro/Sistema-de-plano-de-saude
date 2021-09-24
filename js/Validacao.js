@@ -22,8 +22,15 @@ function validacaopac() {
     $.get(cpf)
         .done(function() { 
             // exists code 
-
-            if (senhacpf == X){}
+            let xmlcpfsenha = 1;
+            if (senhacpf != xmlcpfsenha){
+                alert("Senha incorreta");
+                document.querySelector("#senhacpf").focus();
+            }else{
+                document.querySelector('.btn_ok').classList.add("desaparecer");
+                alert("Dados corretos! Você pode logar agora!")
+                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            }
         }).fail(function() { 
             // not exists code
             alert("Paciente não cadastrado.")
@@ -37,8 +44,15 @@ function validacaomed() {
     $.get(crm)
         .done(function() { 
             // exists code 
-
-            if (senhacrm == X){}
+            let xmlcrmsenha = 1;
+            if (senhacrm != xmlcrmsenha){
+                alert("Senha incorreta");
+                document.querySelector("#senhacrm").focus();
+            }else{
+                document.querySelector('.btn_ok').classList.add("desaparecer");
+                alert("Dados corretos! Você pode logar agora!")
+                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            }
         }).fail(function() { 
             // not exists code
             alert("Medico não cadastrado.")
@@ -47,13 +61,20 @@ function validacaomed() {
 function validacaolab() {
     let logincnpj = document.querySelector("#valicnpj").value;
     let senhacnpj = document.querySelector("#senhacnpj").value;
-    
+
     let cnpj = "../banco_de_dados/laboratorios/" + logincnpj + "/dados.xml"
     $.get(cnpj)
         .done(function() { 
             // exists code 
-
-            if (senhacnpj == X){}
+            let xmlcnpjsenha = 1;
+            if (senhacnpj != xmlcnpjsenha){
+                alert("Senha incorreta");
+                document.querySelector("#senhacnpj").focus();
+            }else{
+                document.querySelector('.btn_ok').classList.add("desaparecer");
+                alert("Dados corretos! Você pode logar agora!")
+                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            }
         }).fail(function() { 
             // not exists code
             alert("Laboratório não cadastrado.")

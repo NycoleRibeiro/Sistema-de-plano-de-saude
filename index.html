@@ -24,12 +24,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                     <label for="tab1">Paciente</label>
                     <div class="content_tabs">
-                        <form action="paciente_consultas.html" method="get">
+                        <form action="paciente_consultas.php" method="get">
                             <p>CPF</p>
                             <input type="text" id="valicpf" name="cpf" placeholder="Digite seu CPF" required>
                             <p>Senha</p>
                             <input type="password" id="senhacpf" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" type="submit" name="enviar" value="OK" onclick="validacaopac()">
+                            <input class="btn_ok" value="OK" type="button" onclick="validacaopac()">
+                            <input class="btn_true_ok desaparecer" type="submit" value="LOGAR">
                         </form>
                     </div>
                 </li>
@@ -38,12 +39,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                     <label for="tab2">Médico</label>
                     <div class="content_tabs">
-                        <form action="medico_dados.html" method="get">
+                        <form action="medico_dados.php" method="get">
                             <p>CRM</p>
                             <input type="text" id="valicrm" name="crm" placeholder="Digite seu CRM" required>
                             <p>Senha</p>
                             <input type="password" id="senhacrm" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" type="submit" value="OK" onclick="validacaomed()">
+                            <input class="btn_ok" value="OK" type="button" onclick="validacaomed()">
+                            <input class="btn_true_ok desaparecer" type="submit" value="LOGAR">
                         </form>
                     </div>
                 </li>
@@ -52,12 +54,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                     <label for="tab3">Laborátorio</label>
                     <div class="content_tabs">
-                        <form action="laboratorio_dados.html" method="get">
+                        <form action="laboratorio_dados.php" method="get">
                             <p>CNPJ</p>
                             <input type="text" id="valicnpj" name="cnpj" placeholder="Digite seu CNPJ" required>
                             <p>Senha</p>
                             <input type="password" id="senhacnpj" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" type="submit" value="OK" onclick="validacaolab()">
+                            <input class="btn_ok" value="OK" type="button" onclick="validacaolab()">
+                            <input class="btn_true_ok desaparecer" type="submit" value="LOGAR">
                         </form>
                     </div>
                 </li>
