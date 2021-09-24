@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src=“js/jquery.js”></script>
     <title>HPS</title>
 </head>
 <body>
@@ -62,12 +63,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="administrador_lab.html" method="get" onsubmit="validacaoadmin()">
+                        <form action="administrador_lab.html" method="get">
                             <p>Login</p>
                             <input id="valiadmin" type="text" name="login" placeholder="Digite seu login" required>
                             <p>Senha</p>
                             <input id="senhaadmin" type="password" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" type="submit" value="OK" >
+                            <input class="btn_ok" value="OK" type="button" onclick="validacaoadmin()">
+                            <input class="btn_true_ok desaparecer" type="submit" value="LOGAR">
                         </form>
                     </div>
                 </li>
