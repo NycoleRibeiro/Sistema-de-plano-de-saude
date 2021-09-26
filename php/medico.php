@@ -30,7 +30,7 @@
                 $xml->senha = $senha;
                 $save = simplexml_import_dom($xml);
                 $save->saveXML($caminho_completo);
-                echo '<div><a href="../medico_dados.php"><i class="fas fa-arrow-circle-left"></i></a> <h1>Cadastrado atualizado com sucesso!</h1></div>';
+                echo '<div class="ok"><a href="../medico_dados.php"><i class="fas fa-arrow-circle-left"></i></a> <h1>Cadastrado atualizado com sucesso!</h1></div>';
             }
         }
 
