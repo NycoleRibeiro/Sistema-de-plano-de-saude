@@ -15,48 +15,60 @@
     </header>
 
     <main>
+        <?php
+            $LoginAtual = fopen("banco_de_dados/login.txt", "r");
+            $MedLogado = fgets($LoginAtual);
+            fclose($LoginAtual);
+
+            $caminho = "banco_de_dados/medicos/".$MedLogado;
+            $xml = simplexml_load_file($caminho . "/dados.xml");
+                if ($xml === false) {
+                    echo "Erro ao carregar XML";
+                    foreach(libxml_get_errors() as $error) {
+                        echo "<br>", $error->message;
+                    }
+                } else {
+                    $medName = $xml->nome;
+                    $crm = $xml->crm;
+                    $especialidade = $xml->especialidade;
+                    $email = $xml->email;
+                    $phone = $xml->telefone;
+                    $adress = $xml->endereco;
+                }
+        ?>
         <div>
             <h1>Meus Dados</h1>
             <table>
                 <tr>
                     <td>Nome:</td>
-                    <td id="medName">
-                        <input type="text" name="medName">
-                    </td>
-                    
+                    <td id="medName"><?php echo $medName ?></td>
                 </tr>
                 <tr>
                     <td>CRM:</td>
-                    <td id="crm">
-                        <input type="text" name="crm">
-                    </td>
+                    <td id="crm"><?php echo $crm ?></td>
                 </tr>
                 <tr>
                     <td>Especialidade:</td>
-                    <td id="special">
-                        <input type="text" name="special">
-                    </td>
+                    <td id="especialidade"><?php echo $especialidade ?></td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td id="email">
-                        <input type="email" name="email">
-                    </td>
+                    <td id="email"><?php echo $email ?></td>
                 </tr>
                 <tr>
                     <td>Telefone:</td>
-                    <td id="phone">
-                        <input type="tel" name="phone">
-                    </td>
+                    <td id="phone"><?php echo $phone ?></td>
                 </tr>
                 <tr>
                     <td>Endereço:</td>
-                    <td id="adress">
-                        <input type="text" name="adress">
-                    </td>
+                    <td id="adress"><?php echo $adress ?></td>
                 </tr>
                 <tr>
-                    <td class="btn" colspan="2"><input name="editarDados" class="btn_editar" type="submit" value="Salvar"></td>
+                    <td class="btn" colspan="2">
+                        <a href="medico_edit_dados.php">
+                            <input class="btn_editar" type="submit" value="Editar">
+                        </a>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -64,7 +76,7 @@
     <aside>
         <nav>
             <ul>
-                <a href="medico_dados.html">
+                <a href="medico_dados.php">
                     <li id ="atual">Meus Dados</li>
                 </a>
                 <a href="medico_consulta.html">

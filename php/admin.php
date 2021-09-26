@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/admin.css">
+    <link rel="stylesheet" href="../style/confirmations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Cadastros</title>
 </head>
 <body>
@@ -14,8 +15,7 @@
             $nome_pasta = $cpf;
             $caminho_completo = $caminho . "/" . $nome_pasta;
             if (is_dir($caminho_completo)) {
-                echo '<h1 class="alert"> Já existe um paciente com esse CPF </h1>';
-                echo '<a href="../administrador_paciente.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                echo '<div class="error"><a href="../administrador_paciente.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Já existe um paciente com esse CPF</h1></div>';
             } else {
                 $pessoa = 
                 "<?xml version='1.0' encoding='UTF-8'?>
@@ -51,8 +51,7 @@
                     $xml->senha = $senha;
                     $save = simplexml_import_dom($xml);
                     $save->saveXML($caminho_completo . "/dados.xml");
-                    echo '<h1 class="sucess"> Paciente cadastrado com sucesso! </h1>';
-                    echo '<a href="../administrador_paciente.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                    echo '<div class="ok"><a href="../administrador_paciente.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Paciente cadastrado com sucesso!</h1></div>';
                 }
             }
         }
@@ -62,8 +61,7 @@
             $nome_pasta = $crm;
             $caminho_completo = $caminho . "/" . $nome_pasta;
             if (is_dir($caminho_completo)) {
-                echo '<h1 class="alert"> Já existe um médico com esse CRM </h1>';
-                echo '<a href="../administrador_med.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                echo '<div class="error"><a href="../administrador_med.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Já existe um médico com esse CRM</h1></div>';
             } else {
                 $pessoa =
                 "<?xml version='1.0' encoding='UTF-8'?>
@@ -96,8 +94,7 @@
                     $xml->senha = $senha;
                     $save = simplexml_import_dom($xml);
                     $save->saveXML($caminho_completo . "/dados.xml");
-                    echo '<h1 class="sucess"> Médico cadastrado com sucesso! </h1>';
-                    echo '<a href="../administrador_med.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                    echo '<div class="ok"><a href="../administrador_med.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Médico cadastrado com sucesso!</h1></div>';
                 }
             }
         }
@@ -107,8 +104,7 @@
             $nome_pasta = $cnpj;
             $caminho_completo = $caminho . "/" . $nome_pasta;
             if (is_dir($caminho_completo)) {
-                echo '<h1 class="alert"> Já existe um laboratório com esse CNPJ </h1>';
-                echo '<a href="../administrador_lab.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                echo '<div class="error"><a href="../administrador_lab.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Já existe um laboratório com esse CNPJ</h1></div>';
             } else {
                 $pessoa =
                 "<?xml version='1.0' encoding='UTF-8'?>
@@ -141,8 +137,7 @@
                     $xml->senha = $senha;
                     $save = simplexml_import_dom($xml);
                     $save->saveXML($caminho_completo . "/dados.xml");
-                    echo '<h1 class="sucess"> Laboratório cadastrado com sucesso! </h1>';
-                    echo '<a href="../administrador_lab.html"><input class="btn_voltar" type="button" value="VOLTAR"></a>';
+                    echo '<div class="ok"><a href="../administrador_lab.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Laboratório cadastrado com sucesso!</h1></div>';
                 }
             }
         }
