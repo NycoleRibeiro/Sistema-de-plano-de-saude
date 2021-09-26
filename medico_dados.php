@@ -65,7 +65,7 @@
                 </tr>
                 <tr>
                     <td class="btn" colspan="2">
-                        <a href="medico_edit_dados.html">
+                        <a href="medico_edit_dados.php">
                             <input class="btn_editar" type="submit" value="Editar">
                         </a>
                     </td>
