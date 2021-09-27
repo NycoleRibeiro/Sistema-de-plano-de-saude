@@ -19,12 +19,18 @@ function validacaopac() {
     let senhacpf = document.querySelector("#senhacpf").value;
     
     let cpf = "../banco_de_dados/pacientes/" + logincpf + "/dados.xml"
+
+    //Caso o get não funcione testar com ajax
     $.get(cpf)
-        .done(function(senha) { 
-            // exists code  
-            $(senha).find()
-            
-            let xmlcpfsenha = 1;
+    //$.ajax(cpf)
+        .done(function(xml) { 
+            //Acredito que um desses vai funcionar:
+    
+            let xmlcpfsenha = $(xml).find("senha")
+            // let xmlcpfsenha = $(xml).find("senha").text()
+            // let xmlcpfsenha = ${$(this).find("senha").text()}
+            // let xmlcpfsenha = ${$(xml).find("senha").text()}
+
             if (senhacpf != xmlcpfsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacpf").focus();
@@ -34,7 +40,7 @@ function validacaopac() {
                 document.querySelector('.btn_true_ok').classList.remove("desaparecer");
             }
         }).fail(function() { 
-            // not exists code
+            
             alert("Paciente não cadastrado.")
         })
 }
