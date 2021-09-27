@@ -17,7 +17,7 @@
     <main>
         <div>
             <h1>Cadastro de Exames</h1>
-            <form action="" method="post">
+            <form action="php/laboratorio.php" method="post">
                 <table>
                     <tr>
                         <td>Data:</td>
@@ -33,10 +33,12 @@
                     </tr>
                     <tr class="result">
                         <td>Resultado:</td>
-                        <td><input type="text" name="resultado" required></td>
+                        <td>
+                            <textarea name="resultado" rows="10" cols="50" required></textarea>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="btn" colspan="2"><input class="btn_cadastrar" type="submit" value="Cadastrar"></td>
+                        <td class="btn" colspan="2"><input class="btn_cadastrar" name="cadastrarExame" type="submit" value="Cadastrar"></td>
                     </tr>
                 </table>
             </form>
@@ -46,7 +48,7 @@
     <aside>
         <nav>
             <ul>
-                <a href="laboratorio_dados.html">
+                <a href="laboratorio_dados.php">
                     <li>Meus Dados</li>
                 </a>
                 <a href="laboratorio_exames.html">
