@@ -34,14 +34,54 @@
             }
         }
 
-        function cadastrarConsulta($data, $paciente, $receita, $observacao, $medico) {
+        function cadastrarConsulta($data, $cpf, $receita, $observacao, $crm) {
+            $caminho = "../banco_de_dados/pacientes/" . $cpf;
+            if (!is_dir($caminho)) {
+                echo '<div class="error"><a href="../medico_consulta.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Não existe um paciente com esse CPF</h1></div>';
+            } else {
+                $consulta = 
+                "<?xml version='1.0' encoding='UTF-8'?>
+                <consulta>
+                    <data></data>
+                    <cpf></cpf>
+                    <medico></medico>
+                    <receita></receita>
+                    <observacao></observacao>
+                </consulta>";
+                $nome_arquivo = "/consulta_do_dia_" . $data . ".xml";
+                $arquivo = fopen($caminho . $nome_arquivo, "w");
+                fwrite($arquivo, $consulta);
+                fclose($arquivo);
 
+                $xml = simplexml_load_file($caminho . $nome_arquivo);
+                if ($xml === false) {
+                    echo "Erro ao carregar XML";
+                    foreach(libxml_get_errors() as $error) {
+                        echo "<br>", $error->message;
+                    }
+                } else {
+                    $xml->data = $data;
+                    $xml->cpf = $cpf;
+                    $xml->medico = $crm;
+                    $xml->receita = $receita;
+                    $xml->observacao = $observacao;
+                    $save = simplexml_import_dom($xml);
+                    $save->saveXML($caminho . $nome_arquivo);
+                    echo '<div class="ok"><a href="../medico_consulta.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Consulta cadastrada com sucesso!</h1></div>';
+                }
+            }
         }
 
         function verHistorico($cpf) {
 
         }
 
+
+        // Pegando o login atual
+        $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
+        $crm = fgets($LoginAtual);
+        fclose($LoginAtual);
+        // Pegando os dados do médico
         if (isset($_POST['editarDados'])) {
             $nome = $_POST['name'];
             $especialidade = $_POST['especialidade'];
@@ -51,7 +91,11 @@
             $endereco = $_POST['address'];
             editarDados($nome, $especialidade, $email, $senha, $telefone, $endereco);
         } else if (isset($_POST['cadastrarConsulta'])) {
-            cadastrarConsulta($_POST['data'], $_POST['paciente'], $_POST['receita'], $_POST['observacao'], $_POST['medico']);
+            $data = $_POST['data'];
+            $cpf = $_POST['cpf'];
+            $receita = $_POST['receita'];
+            $observacao = $_POST['observacao'];
+            cadastrarConsulta($data, $cpf, $receita, $observacao, $crm);
             
         } else if (isset($_POST['verHistorico'])) {
             verHistorico($_POST['cpf']);
