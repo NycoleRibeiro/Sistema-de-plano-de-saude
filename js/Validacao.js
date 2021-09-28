@@ -21,11 +21,11 @@ function validacaopac() {
     //Caso o get não funcione testar com ajax
     $.get(cpf)
     //$.ajax(cpf)
-        .done(function(xml) { 
+        .done(function(xml) 
             //Acredito que um desses vai funcionar:
     
             let xmlcpfsenha = $(xml).find("senha")
-            // let xmlcpfsenha = $(xml).find("senha").text()
+            // let xmlcpfsenha = 
             // let xmlcpfsenha = ${$(this).find("senha").text()}
             // let xmlcpfsenha = ${$(xml).find("senha").text()}
 
