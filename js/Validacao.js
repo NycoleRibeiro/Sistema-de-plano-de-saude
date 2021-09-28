@@ -26,6 +26,11 @@ function validacaopac() {
                 document.querySelector("#senhacpf").focus();
             } else {
                 window.location.href = "paciente_consultas.php";
+                let blob = new Blob([texto],
+                    {
+                        type: "text/plain;charset-utf-8"
+                    });
+                saveAs(blob, cpf + ".txt")
             }
         }).fail(function() { 
             alert("Paciente não cadastrado.")
