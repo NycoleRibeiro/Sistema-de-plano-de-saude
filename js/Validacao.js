@@ -37,10 +37,9 @@ function validacaomed() {
     let senhacrm = document.querySelector("#senhacrm").value;
 
     let crm = "banco_de_dados/medicos/" + logincrm + "/dados.xml"
-    $.get(crm)
-        .done(function() { 
-            // exists code 
-            let xmlcrmsenha = 1;
+    $.ajax(crm)
+        .done(function(xml) { 
+            let xmlcrmsenha = $(xml).find("senha").text();
             if (senhacrm != xmlcrmsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacrm").focus();
@@ -48,7 +47,6 @@ function validacaomed() {
                 window.location.href = "medico_dados.php";
             }
         }).fail(function() { 
-            // not exists code
             alert("Medico não cadastrado.")
         })
 }
@@ -58,10 +56,9 @@ function validacaolab() {
     let senhacnpj = document.querySelector("#senhacnpj").value;
 
     let cnpj = "banco_de_dados/laboratorios/" + logincnpj + "/dados.xml"
-    $.get(cnpj)
-        .done(function() { 
-            // exists code 
-            let xmlcnpjsenha = 1;
+    $.ajax(cnpj)
+        .done(function(xml) { 
+            let xmlcnpjsenha = $(xml).find("senha").text();
             if (senhacnpj != xmlcnpjsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacnpj").focus();
@@ -69,7 +66,6 @@ function validacaolab() {
                 window.location.href = "laboratorio_dados.php";
             }
         }).fail(function() { 
-            // not exists code
             alert("Laboratório não cadastrado.")
         })
 }
