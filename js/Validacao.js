@@ -25,13 +25,13 @@ function validacaopac() {
                 alert("Senha incorreta");
                 document.querySelector("#senhacpf").focus();
             } else {
-                window.location.href = "paciente_consultas.php";
                 const fs = require('fs')
                 fs.appendFile("login.txt", logincpf, function(err){
                     if(err){
                         console.log('arquivo não encontrado')
                     }
                 })
+                window.location.href = "paciente_consultas.php";
             }
         }).fail(function() { 
             alert("Paciente não cadastrado.")
