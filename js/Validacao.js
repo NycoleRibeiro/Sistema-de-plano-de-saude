@@ -15,7 +15,7 @@ function validacaoadmin() {
 function validacaopac() {
     let logincpf = document.querySelector("#valicpf").value;
     let senhacpf = document.querySelector("#senhacpf").value;
-    
+
     let cpf = "banco_de_dados/pacientes/" + logincpf + "/dados.xml"
 
     $.ajax(cpf)
