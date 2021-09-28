@@ -16,10 +16,11 @@
 
     <main>
         <?php
+            // Pega o crm do médico logado
             $LoginAtual = fopen("banco_de_dados/loginMed.txt", "r");
             $MedLogado = fgets($LoginAtual);
             fclose($LoginAtual);
-
+            // Entrando no arquivo de dados do médico
             $caminho = "banco_de_dados/medicos/".$MedLogado;
             $xml = simplexml_load_file($caminho . "/dados.xml");
                 if ($xml === false) {
