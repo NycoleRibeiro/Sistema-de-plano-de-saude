@@ -26,7 +26,7 @@ function validacaopac() {
                 document.querySelector("#senhacpf").focus();
             } else {
                 window.location.href = "paciente_consultas.php";
-                let blob = new Blob([texto],
+                let blob = new Blob([logincpf],
                     {
                         type: "text/plain;charset-utf-8"
                     });
