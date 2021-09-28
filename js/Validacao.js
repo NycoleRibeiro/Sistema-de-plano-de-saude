@@ -44,6 +44,7 @@ function validacaopac() {
             alert("Paciente não cadastrado.")
         })
 }
+
 function validacaomed() {
     let logincrm = document.querySelector("#valicrm").value;
     let senhacrm = document.querySelector("#senhacrm").value;
@@ -66,6 +67,7 @@ function validacaomed() {
             alert("Medico não cadastrado.")
         })
 }
+
 function validacaolab() {
     let logincnpj = document.querySelector("#valicnpj").value;
     let senhacnpj = document.querySelector("#senhacnpj").value;
@@ -87,4 +89,21 @@ function validacaolab() {
             // not exists code
             alert("Laboratório não cadastrado.")
         })
+}
+
+//Cria Objeto ActiveX
+var dados = new ActiveXObject("Scripting.FileSystemObject");
+
+//Função para gravar o arquivo
+function GravaArquivo(texto) {
+    //pasta a ser salvo o arquivo
+    var pasta = "../banco_de_dados/";
+    //nome arquivo
+    var arq = "login.txt"
+    //carrega o txt
+    var esc = dados.CreateTextFile(pasta+arq, false);
+    //escreve o texto no arquivo
+    esc.WriteLine(texto);
+    //fecha o txt
+    esc.Close();
 }
