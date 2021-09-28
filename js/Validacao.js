@@ -7,10 +7,8 @@ function validacaoadmin() {
     } else if (senhaadmin != "admin") {
         alert("Senha incorreta");
         document.querySelector("#senhaadmin").focus();
-    }else {
-        document.querySelector('.btn_ok').classList.add("desaparecer");
-        alert("Dados corretos! Você pode logar agora!")
-        document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+    } else {
+        window.location.href = "administrador_paciente.html";
     }
 }
 
@@ -34,10 +32,8 @@ function validacaopac() {
             if (senhacpf != xmlcpfsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacpf").focus();
-            }else{
-                document.querySelector('.btn_ok').classList.add("desaparecer");
-                alert("Dados corretos! Você pode logar agora!")
-                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            } else {
+                window.location.href = "paciente_consultas.php";
             }
         }).fail(function() { 
             
@@ -57,10 +53,8 @@ function validacaomed() {
             if (senhacrm != xmlcrmsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacrm").focus();
-            }else{
-                document.querySelector('.btn_ok').classList.add("desaparecer");
-                alert("Dados corretos! Você pode logar agora!")
-                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            } else {
+                window.location.href = "medico_dados.php";
             }
         }).fail(function() { 
             // not exists code
@@ -80,10 +74,8 @@ function validacaolab() {
             if (senhacnpj != xmlcnpjsenha){
                 alert("Senha incorreta");
                 document.querySelector("#senhacnpj").focus();
-            }else{
-                document.querySelector('.btn_ok').classList.add("desaparecer");
-                alert("Dados corretos! Você pode logar agora!")
-                document.querySelector('.btn_true_ok').classList.remove("desaparecer");
+            } else {
+                window.location.href = "laboratorio_dados.php";
             }
         }).fail(function() { 
             // not exists code
