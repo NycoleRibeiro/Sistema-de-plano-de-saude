@@ -15,23 +15,30 @@
     </header>
 
     <main>
-        <div>
-            <h1>Consulta do dia: <span id="diaConsulta"></span></h1>
-            <table>
-                <tr>
-                    <td>Médico:</td>
-                    <td id="doctor"></td>
-                </tr>
-                <tr>
-                    <td>Paciente:</td>
-                    <td id="paciente"></td>
-                </tr>
-                <tr>
-                    <td>Receita:</td>
-                    <td id="receita"></td>
-                </tr>
-            </table>
-        </div>
+        <?php
+            $LoginAtual = fopen("banco_de_dados/login.txt", "r");
+            $PacienteLogado = fgets($LoginAtual);
+            fclose($LoginAtual);
+            $dir = "banco_de_dados/pacientes/" . $PacienteLogado;
+            // Lista de consultas
+            $listaDir = scandir($dir);
+            foreach ($listaDir as $consulta) {
+                if ($consulta != "." && $consulta != ".." && $consulta != "dados.xml") {
+                    if ($consulta[0] == "c"){
+                        $consultaDir = $dir . "/" . $consulta;
+                        $consultaXml = simplexml_load_file($consultaDir);
+                        $data = $consultaXml->data;
+                        $paciente = $consultaXml->cpf;
+                        $medico = $consultaXml->medico;
+                        $receita = $consultaXml->receita;
+                        echo "<h1>Consulta do dia {$data}</h1>";
+                        echo "<table><tr><td>Paciente: {$paciente}</td></tr>";
+                        echo "<tr><td>Médico: {$medico}</td></tr>";
+                        echo "<tr><td>Receita: {$receita}</td></tr></table>";
+                    }
+                }
+            }
+        ?>
     </main>
 
     <aside>
