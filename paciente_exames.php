@@ -16,6 +16,7 @@
 
     <main>
         <?php
+            // Pega o cpf do paciente logado
             $LoginAtual = fopen("banco_de_dados/loginPac.txt", "r");
             $PacienteLogado = fgets($LoginAtual);
             fclose($LoginAtual);
@@ -44,10 +45,10 @@
     <aside>
         <nav>
             <ul>
-                <a href="paciente_consultas.html">
+                <a href="paciente_consultas.php">
                     <li>Consultas</li>
                 </a>
-                <a href="paciente_exames.html">
+                <a href="paciente_exames.php">
                     <li id="atual">Exames</li>
                 </a>                   
             </ul>
