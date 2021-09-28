@@ -22,12 +22,15 @@ function validacaopac() {
         .done(function(xml) {
                 let xmlcpfsenha = $(xml).find("senha").text();
             if (senhacpf != xmlcpfsenha){
+                // Caso a senha não seja a mesma cadastrada no XML, o alerta é exibido
                 alert("Senha incorreta");
                 document.querySelector("#senhacpf").focus();
             } else {
+                // Caso a senha seja a mesma cadastrada no XML, a página de perfil é aberta
                 window.location.href = "paciente_consultas.php";
             }
         }).fail(function() { 
+            // Caso o CPF não exista no banco de dados
             alert("Paciente não cadastrado.")
         });
 }
