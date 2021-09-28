@@ -72,10 +72,6 @@
             }
         }
 
-        function verHistorico($cpf) {
-
-        }
-
 
         // Pegando o login atual
         $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
@@ -96,10 +92,8 @@
             $receita = $_POST['receita'];
             $observacao = $_POST['observacao'];
             cadastrarConsulta($data, $cpf, $receita, $observacao, $crm);
-            
-        } else if (isset($_POST['verHistorico'])) {
-            verHistorico($_POST['cpf']);
         }
     ?>
+</div>
 </body>
 </html>
