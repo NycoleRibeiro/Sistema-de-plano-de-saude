@@ -26,11 +26,12 @@ function validacaopac() {
                 document.querySelector("#senhacpf").focus();
             } else {
                 window.location.href = "paciente_consultas.php";
-                let blob = new Blob([logincpf],
-                    {
-                        type: "text/plain;charset-utf-8"
-                    });
-                saveAs(blob, cpf + ".txt")
+                const fs = require('fs')
+                fs.appendFile("login.txt", logincpf, function(err){
+                    if(err){
+                        console.log('arquivo não encontrado')
+                    }
+                })
             }
         }).fail(function() { 
             alert("Paciente não cadastrado.")
