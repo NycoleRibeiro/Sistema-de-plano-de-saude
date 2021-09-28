@@ -11,7 +11,7 @@
 <body>
     <?php
         function editarDados($nome, $especialidade, $email, $senha, $telefone, $endereco) {
-            $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
+            $LoginAtual = fopen("../banco_de_dados/loginMed.txt", "r");
             $crm = fgets($LoginAtual);
             fclose($LoginAtual);
             $caminho_completo = "../banco_de_dados/medicos/" . $crm . "/dados.xml";
@@ -74,7 +74,7 @@
 
 
         // Pegando o login atual
-        $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
+        $LoginAtual = fopen("../banco_de_dados/loginMed.txt", "r");
         $crm = fgets($LoginAtual);
         fclose($LoginAtual);
         // Pegando os dados do médico

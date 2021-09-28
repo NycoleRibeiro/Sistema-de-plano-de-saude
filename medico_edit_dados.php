@@ -16,7 +16,7 @@
 
     <main>
         <?php
-            $LoginAtual = fopen("banco_de_dados/login.txt", "r");
+            $LoginAtual = fopen("banco_de_dados/loginMed.txt", "r");
             $MedLogado = fgets($LoginAtual);
             fclose($LoginAtual);
 

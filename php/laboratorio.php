@@ -72,7 +72,7 @@
 
 
         // Pegando o login atual
-        $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
+        $LoginAtual = fopen("../banco_de_dados/loginLab.txt", "r");
         $cnpj = fgets($LoginAtual);
         fclose($LoginAtual);
         // Pegando os dados do laboratorio

@@ -46,7 +46,7 @@
         }
 
         // Pegando o login atual
-        $LoginAtual = fopen("../banco_de_dados/login.txt", "r");
+        $LoginAtual = fopen("../banco_de_dados/loginMed.txt", "r");
         $crm = fgets($LoginAtual);
         fclose($LoginAtual);
         if (isset($_POST['verHistorico'])) {

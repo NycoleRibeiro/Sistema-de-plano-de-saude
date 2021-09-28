@@ -16,7 +16,7 @@
 
     <main>
         <?php
-            $LoginAtual = fopen("banco_de_dados/login.txt", "r");
+            $LoginAtual = fopen("banco_de_dados/loginPac.txt", "r");
             $PacienteLogado = fgets($LoginAtual);
             fclose($LoginAtual);
             $dir = "banco_de_dados/pacientes/" . $PacienteLogado;
