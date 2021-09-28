@@ -114,8 +114,3 @@ input {
     cursor: pointer;
     transition: 0.3s;
 }
-
-
-.desaparecer{
-    display: none;
-}
