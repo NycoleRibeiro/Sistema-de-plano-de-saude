@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medico>
+                    <nome>Cristina Yang</nome>
+                    <crm>12345</crm>
+                    <especialidade>Cardio</especialidade>
+                    <telefone>(53) 991457825</telefone>
+                    <endereco>Rua Sete de Setembro, 257</endereco>
+                    <email>yang@med.com</email>
+                    <senha>1234</senha>
+                </medico>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paciente>
+                    <nome>Angelo Nascimento</nome>
+                    <cpf>04265704578</cpf>
+                    <sexo>M</sexo>
+                    <nascimento>1998-05-20</nascimento>
+                    <telefone>(53) 999124578</telefone>
+                    <endereco>Rua Fernando Fagundes Ferreira, 365</endereco>
+                    <email>angnasc@gmail.com</email>
+                    <senha>1234</senha>
+                </paciente>
