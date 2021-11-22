@@ -7,14 +7,14 @@ html, body {
 
 .container {
     display: grid;
-    grid-template-columns: 8fr 1fr;
-    grid-template-rows: 11vh 89vh ;
+    grid-template-columns: 90vw;
+    grid-template-rows: 10vh 90vh ;
     grid-template-areas: "h h"
-                         "m a";
+                         "m m";
 }
 
 header {
-    grid-area: h; 
+    grid-area: h;
     background: #739b76;
     color: #fff;
     font-family: cursive;
@@ -23,7 +23,8 @@ header {
 }
 
 img{
-    width: 26vh;
+    width: 15vh;
+    float: right;
 }
 
 main {
@@ -31,31 +32,26 @@ main {
     background: #ddd;
 }
 
-aside {
-    grid-area: a;
-    background: #497046;
-    text-align: center;
-    user-select: none;
-}
-
 ul {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3em;
+    margin-top: 5.4vh; /*CORRIGIR EM NOTEBOOK*/
 }
 
 li {
     padding: 0.5em;
-    margin: 0.5em;
-    background: #739b76;
+    background: #88BD93;
     color: #fff;
-    border-radius: 0.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 li:hover {
-    background: #496647;
+    background: #76af81;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -65,8 +61,8 @@ a {
 }
 
 #atual {
-    background: #385836;
-    color: #fff;
+    background: #ddd;
+    color: #000000;
 }
 
 /*MAIN CSS*/
