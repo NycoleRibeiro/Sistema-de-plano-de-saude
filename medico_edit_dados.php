@@ -11,7 +11,20 @@
 <body>
 <div class="container">
     <header>
-        <img src="images/logoHpsCompleto.png"></img>
+        <img src="images/newLogoCurta.png"></img>
+        <nav>
+            <ul>
+                <a href="medico_dados.php">
+                    <li id ="atual">Meus Dados</li>
+                </a>
+                <a href="medico_consulta.html">
+                    <li>Cadastrar Consulta</li>
+                </a>
+                <a href="medico_historico.html">
+                    <li>Histórico Pacientes</li>
+                </a>                    
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -91,21 +104,6 @@
             </form>
         </div>
     </main>
-    <aside>
-        <nav>
-            <ul>
-                <a href="medico_dados.php">
-                    <li id ="atual">Meus Dados</li>
-                </a>
-                <a href="medico_consulta.html">
-                    <li>Cadastrar Consulta</li>
-                </a>
-                <a href="medico_historico.html">
-                    <li>Histórico Pacientes</li>
-                </a>                    
-            </ul>
-        </nav>
-    </aside>
 </div>
 </body>
 </html>
