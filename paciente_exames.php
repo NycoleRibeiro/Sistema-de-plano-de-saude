@@ -14,6 +14,9 @@
         <img src="images/newLogoCurta.png"></img>
         <nav>
             <ul>
+                <a href="paciente_dados.php">
+                    <li>Meus Dados</li>
+                </a>
                 <a href="paciente_consultas.php">
                     <li>Consultas</li>
                 </a>
