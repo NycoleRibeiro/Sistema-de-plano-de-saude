@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/seccoes.css">
     <link rel="stylesheet" href="style/med.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Médico Dados</title>
 </head>
 <body>
 <div class="container">
     <header>
+        <div class="userLogado">
+            <i class="fas fa-user-md"></i>
+            Nome do Médico
+        </div>
         <img src="images/newLogoCurta.png"></img>
         <nav>
             <ul>
@@ -51,7 +56,7 @@
                 }
         ?>
         <div id="dadosPessoaisWindow">
-            <h1>Meus Dados</h1>
+            <h1><i class="fas fa-user"></i>Meus Dados</h1>
             <table>
                 <tr>
                     <td>Nome:</td>
@@ -83,6 +88,23 @@
                             <input class="btn_editar" type="submit" value="Editar">
                         </a>
                     </td>
+                </tr>
+            </table>
+        </div>
+        <div id="estatisticasWindow">
+            <h1><i class="fas fa-stethoscope"></i>Estatísticas das Consultas</h1>
+            <table>
+                <tr>
+                    <td>Consultas do Mês:</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Consultas do Ano:</td>
+                    <td>642</td>
+                </tr>
+                <tr>
+                    <td>Média Mensal:</td>
+                    <td>20</td>
                 </tr>
             </table>
         </div>
