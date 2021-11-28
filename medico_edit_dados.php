@@ -55,7 +55,7 @@
                     $password = $xml->senha;
                 }
         ?>
-        <div>
+        <div id="mainWindow">
             <h1>Meus Dados</h1>
             <form action="php/medico.php" method="post">
                 <table>
