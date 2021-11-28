@@ -17,6 +17,16 @@
             Nome do Laboratório
         </div>
         <img src="images/newLogoCurta.png"></img>
+        <nav>
+            <ul>
+                <a href="laboratorio_dados.php">
+                    <li id="atual">Meus Dados</li>
+                </a>
+                <a href="laboratorio_exames.html">
+                    <li>Cadastrar Exames</li>
+                </a>                   
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -95,19 +105,6 @@
             </table>
         </div>
     </main>
-
-    <aside>
-        <nav>
-            <ul>
-                <a href="laboratorio_dados.php">
-                    <li id="atual">Meus Dados</li>
-                </a>
-                <a href="laboratorio_exames.html">
-                    <li>Cadastrar Exames</li>
-                </a>                   
-            </ul>
-        </nav>
-    </aside>
 </div>
 </body>
 </html>
