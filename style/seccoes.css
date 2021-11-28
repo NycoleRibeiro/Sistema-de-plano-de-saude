@@ -83,7 +83,7 @@ a {
     position: absolute;
     width: 50vw;
     left: calc(50% - 25vw);
-    top: 12vh;
+    top: 15vh;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
@@ -93,7 +93,7 @@ a {
     position: absolute;
     width: 50vw;
     left: calc(50% - 25vw);
-    top: 45vh;
+    top: 50vh;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
@@ -110,6 +110,7 @@ a {
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
 }
 
+/*ESTATISTICAS DA PÁGINA DO PACIENTE*/
 #estatisticasConsultasWindow {
     position: absolute;
     top:13vh;
@@ -130,11 +131,11 @@ a {
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
 }
 
-#cadastroWindow {
+#mainWindow {
     position: absolute;
     width: 50vw;
     left: calc(50% - 25vw);
-    top: 12vh;
+    top: 15vh;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
@@ -166,14 +167,14 @@ td {
 }
 
 td input {
-    width: 30vw;
+    width: 34.5vw;
     height: 4vh;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 td textarea {
-    width: 30vw;
+    width: 34.5vw;
     height: 10vh;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -218,7 +219,7 @@ td textarea {
         position: absolute;
         width: 50vw;
         left: calc(50% - 25vw);
-        top: 45vh;
+        top: 50vh;
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 5px 5px 5px rgb(160, 160, 160);
