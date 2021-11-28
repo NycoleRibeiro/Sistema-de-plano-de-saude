@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/seccoes.css">
-    <link rel="stylesheet" href="style/pac.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Paciente Consultas</title>
 </head>
 <body>
 <div class="container">
     <header>
+        <div class="userLogado">
+            <i class="fas fa-user-injured"></i>
+            Nome do Paciente
+        </div>
         <img src="images/newLogoCurta.png"></img>
         <nav>
             <ul>
