@@ -130,6 +130,16 @@ a {
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
 }
 
+#cadastroWindow {
+    position: absolute;
+    width: 50vw;
+    left: calc(50% - 25vw);
+    top: 12vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
 h1 {
     font-size: 1.5em;
     color: #FFF;
@@ -156,10 +166,20 @@ td {
 }
 
 td input {
-    width: 70vw;
+    width: 30vw;
     height: 4vh;
     border-radius: 10px;
     border: 1px solid #ccc;
+}
+
+td textarea {
+    width: 30vw;
+    height: 10vh;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    resize: none;
+    overflow: auto;
 }
 
 
