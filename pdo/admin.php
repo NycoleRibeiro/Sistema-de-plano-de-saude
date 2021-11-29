@@ -17,7 +17,7 @@
             }
         }
         // Insere o novo paciente no banco de dados se não houver nenhum CPF igual
-        $sql = "INSERT INTO paciente (nome, cpf, data_nasc, sexo, telefone, email, endereco, senha) VALUES (:nome, :cpf, :data_nasc, :sexo, :telefone, :email, :endereco, :senha)";
+        $sql = "INSERT INTO paciente (nome, cpf, nascimento, sexo, telefone, email, endereco, senha) VALUES (:nome, :cpf, :data_nasc, :sexo, :telefone, :email, :endereco, :senha)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':cpf', $cpf);
@@ -75,7 +75,7 @@
             }
         }
         // Insere o novo laboratório no banco de dados se não houver nenhum CNPJ igual
-        $sql = "INSERT INTO laboratorio (nome, cnpj, tipo_exame, telefone, email, endereco, senha) VALUES (:nome, :cnpj, :tipo_exame, :telefone, :email, :endereco, :senha)";
+        $sql = "INSERT INTO laboratorio (nome, cnpj, tipo_de_exame, telefone, email, endereco, senha) VALUES (:nome, :cnpj, :tipo_exame, :telefone, :email, :endereco, :senha)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':cnpj', $cnpj);
