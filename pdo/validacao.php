@@ -31,6 +31,10 @@
         
     }
 
+    function login_admin($login, $senha) {
+        
+    }
+
 
     if(isset($_POST['login_lab'])) {
         // Caso o botão clicado seja o de login do laboratório
@@ -47,5 +51,10 @@
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
         login_paciente($cpf, $senha);
+    } else if(isset($_POST['login_admin'])) {
+        // Caso o botão clicado seja o de login do administrador
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
+        login_admin($login, $senha);
     }
 ?>
