@@ -20,9 +20,9 @@
         <?php
             $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
             if ($erro == 1) {
-                $error = "* Usuário não encontrado";
+                $error = "* Usuário não encontrado *";
             } else if ($erro == 2) {
-                $error = "* Senha inválida";
+                $error = "* Senha inválida *";
             } else {
                 $error = "";
             }
