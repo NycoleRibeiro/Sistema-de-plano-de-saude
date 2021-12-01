@@ -1,11 +1,12 @@
 CREATE DATABASE hps;
 use hps;
 
-CREATE TABLE admin (
-    user VARCHAR(5) NOT NULL,
-    pass VARCHAR(5) NOT NULL
+CREATE TABLE administrador (
+    usuario VARCHAR(5) NOT NULL,
+    senha VARCHAR(5) NOT NULL,
+    PRIMARY KEY (usuario)
 );
-INSERT INTO admin VALUES ('admin', 'admin');
+INSERT INTO administrador VALUES ('admin', 'admin');
 CREATE TABLE paciente (
     nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(11) NOT NULL,
