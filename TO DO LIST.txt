@@ -2,15 +2,15 @@
 
 // validacao.php
 [ x ] Paciente Login
-[   ] Médico Login
-[   ] Laboratório Login
-[   ] Admin Login
+[ x ] Médico Login
+[ x ] Laboratório Login
+[ x ] Admin Login
 
 // paciente_dados.php
 [ x ] Exibir Dados do Paciente
 
 // medico_dados.php
-[   ] Exibir Dados do Médico
+[ x ] Exibir Dados do Médico
 [   ] Exibir Estatísticas do Médico
 // medico_edit_dados.php
 [   ] Editar Dados do Médico
@@ -18,7 +18,7 @@
 [   ] Médico Cadastrar Consultas
 
 // laboratorio_dados.php
-[   ] Exibir dados do Laboratório
+[ x ] Exibir dados do Laboratório
 [   ] Exibir Estatísticas do Laboratório
 // laboratorio_edit_dados.php
 [   ] Editar dados do Laboratório
@@ -34,6 +34,8 @@
 
 // medico_historico.php
 [   ] Médico Ver Histórico de Consultas e Exames do Paciente
+
+
 [   ]
 [   ]
 [   ]
