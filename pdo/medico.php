@@ -21,23 +21,23 @@
                 $sql = "UPDATE medico SET nome='$nome' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
-            } else if ($result[0]['especialidade'] != $especialidade) {
+            } if ($result[0]['especialidade'] != $especialidade) {
                 $sql = "UPDATE medico SET especialidade='$especialidade' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
-            } else if ($result[0]['email'] != $email) {
+            } if ($result[0]['email'] != $email) {
                 $sql = "UPDATE medico SET email='$email' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
-            } else if ($result[0]['senha'] != $senha) {
+            } if ($result[0]['senha'] != $senha) {
                 $sql = "UPDATE medico SET senha='$senha' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
-            } else if ($result[0]['telefone'] != $telefone) {
+            } if ($result[0]['telefone'] != $telefone) {
                 $sql = "UPDATE medico SET telefone='$telefone' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
-            } else if ($result[0]['endereco'] != $endereco) {
+            } if ($result[0]['endereco'] != $endereco) {
                 $sql = "UPDATE medico SET endereco='$endereco' WHERE crm=$crm";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
