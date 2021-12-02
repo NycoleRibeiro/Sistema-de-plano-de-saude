@@ -13,7 +13,7 @@
 [ x ] Exibir Dados do Médico
 [   ] Exibir Estatísticas do Médico
 // medico_edit_dados.php
-[   ] Editar Dados do Médico
+[ x ] Editar Dados do Médico
 // medico_consulta.html
 [   ] Médico Cadastrar Consultas
 
