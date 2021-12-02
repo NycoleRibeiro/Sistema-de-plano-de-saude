@@ -21,7 +21,7 @@
 [ x ] Exibir dados do Laboratório
 [   ] Exibir Estatísticas do Laboratório
 // laboratorio_edit_dados.php
-[   ] Editar dados do Laboratório
+[ x ] Editar dados do Laboratório
 // laboratorio_exames.html
 [   ] Laboratório cadastrar Exames
 
@@ -34,13 +34,3 @@
 
 // medico_historico.php
 [   ] Médico Ver Histórico de Consultas e Exames do Paciente
-
-
-[   ]
-[   ]
-[   ]
-[   ]
-[   ]
-[   ]
-[   ]
-[   ]
