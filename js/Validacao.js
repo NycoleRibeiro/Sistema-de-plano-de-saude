@@ -27,7 +27,7 @@ function validacaopac() {
                 document.querySelector("#senhacpf").focus();
             } else {
                 // Caso a senha seja a mesma cadastrada no XML, a página de perfil é aberta
-                window.location.href = "paciente_consultas.php";
+                window.location.href = "paciente_dados.php";
             }
         }).fail(function() { 
             // Caso o CPF não exista no banco de dados

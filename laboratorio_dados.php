@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/seccoes.css">
     <link rel="stylesheet" href="style/lab.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Laboratório Dados</title>
 </head>
 <body>
 <div class="container">
     <header>
-        <img src="images/logoHpsCompleto.png"></img>
+        <div class="userLogado">
+            <i class="fas fa-flask"></i>
+            Nome do Laboratório
+        </div>
+        <img src="images/newLogoCurta.png"></img>
+        <nav>
+            <ul>
+                <a href="laboratorio_dados.php">
+                    <li id="atual">Meus Dados</li>
+                </a>
+                <a href="laboratorio_exames.html">
+                    <li>Cadastrar Exames</li>
+                </a>                   
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -36,8 +51,8 @@
                     $adress = $xml->endereco;
                 }
         ?>
-        <div>
-            <h1>Meus Dados</h1>
+        <div id="dadosPessoaisWindow">
+            <h1><i class="fas fa-user"></i>Meus Dados</h1>
             <table>
                 <tr>
                     <td>Laboratório:</td>
@@ -72,20 +87,24 @@
                 </tr>
             </table>
         </div>
+        <div id="estatisticasWindow">
+            <h1><i class="fas fa-stethoscope"></i>Estatísticas dos Exames</h1>
+            <table>
+                <tr>
+                    <td>Exames do Mês:</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Exames do Ano:</td>
+                    <td>642</td>
+                </tr>
+                <tr>
+                    <td>Média Mensal:</td>
+                    <td>20</td>
+                </tr>
+            </table>
+        </div>
     </main>
-
-    <aside>
-        <nav>
-            <ul>
-                <a href="laboratorio_dados.php">
-                    <li id="atual">Meus Dados</li>
-                </a>
-                <a href="laboratorio_exames.html">
-                    <li>Cadastrar Exames</li>
-                </a>                   
-            </ul>
-        </nav>
-    </aside>
 </div>
 </body>
 </html>

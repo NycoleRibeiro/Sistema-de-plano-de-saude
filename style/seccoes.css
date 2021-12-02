@@ -7,14 +7,14 @@ html, body {
 
 .container {
     display: grid;
-    grid-template-columns: 8fr 1fr;
-    grid-template-rows: 11vh 89vh ;
+    grid-template-columns: 90vw;
+    grid-template-rows: 10vh 90vh ;
     grid-template-areas: "h h"
-                         "m a";
+                         "m m";
 }
 
 header {
-    grid-area: h; 
+    grid-area: h;
     background: #739b76;
     color: #fff;
     font-family: cursive;
@@ -22,8 +22,20 @@ header {
     user-select: none;
 }
 
+.userLogado {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.userLogado i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
 img{
-    width: 26vh;
+    width: 15vh;
+    float: right;
 }
 
 main {
@@ -31,31 +43,27 @@ main {
     background: #ddd;
 }
 
-aside {
-    grid-area: a;
-    background: #497046;
-    text-align: center;
-    user-select: none;
-}
-
 ul {
+    position: absolute;
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3em;
+    bottom: 90vh;
 }
 
 li {
-    padding: 0.5em;
-    margin: 0.5em;
-    background: #739b76;
+    padding: 10px 10.5px;
+    background: #88BD93;
     color: #fff;
-    border-radius: 0.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 li:hover {
-    background: #496647;
+    background: #76af81;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -65,37 +73,178 @@ a {
 }
 
 #atual {
-    background: #385836;
-    color: #fff;
+    background: #ddd;
+    color: #000000;
 }
 
 /*MAIN CSS*/
+
+#dadosPessoaisWindow {
+    position: absolute;
+    width: 50vw;
+    left: calc(50% - 25vw);
+    top: 15vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
+#estatisticasWindow {
+    position: absolute;
+    width: 50vw;
+    left: calc(50% - 25vw);
+    top: 50vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+    margin-top: 100px;
+}
+
+#dadosPacienteWindow {
+    position: absolute;
+    top:13vh;
+    left:15vh;
+    width: 55vw;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
+/*ESTATISTICAS DA PÁGINA DO PACIENTE*/
+#estatisticasConsultasWindow {
+    position: absolute;
+    top:13vh;
+    left:66vw;
+    width: 25vw;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
+#estatisticasExamesWindow {
+    position: absolute;
+    top:40vh;
+    left:66vw;
+    width: 25vw;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
+#mainWindow {
+    position: absolute;
+    width: 50vw;
+    left: calc(50% - 25vw);
+    top: 15vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+}
+
 h1 {
     font-size: 1.5em;
     color: #FFF;
-    background-color: #405239;
-    width: 78vw;
+    background-color: #88BD93;
     padding: 10px 10px;
     border-radius: 10px;
-    margin-left: 1.3vw;
-    margin-top: 1.5vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 i {
+    margin-right: 10px;
 }
 
 table {
-    width: 80vw;
+    width: 100%;
     font-size: 1.2em;
-    margin: 10px;
-    padding: 10px 10px;
+    padding: 0px 20px;
 }
 
 td {
     padding: 10px 10px;
-    border-bottom: 1px solid #CCC;
+    /*border-bottom: 1px solid #b1ccb1;*/
 }
 
 td input {
-    width: 70vw;
+    width: 34.5vw;
     height: 4vh;
     border-radius: 10px;
     border: 1px solid #ccc;
+}
+
+td textarea {
+    width: 34.5vw;
+    height: 10vh;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    resize: none;
+    overflow: auto;
+}
+
+
+@media(max-width:1370px) and (max-height:900px){
+    .userLogado {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+    
+    .userLogado i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    ul {
+        position: absolute;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1em;
+        bottom: 90vh;
+    }
+    
+    li {
+        padding: 6px 6.5px;
+        background: #88BD93;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #estatisticasWindow {
+        position: absolute;
+        width: 50vw;
+        left: calc(50% - 25vw);
+        top: 50vh;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(160, 160, 160);
+        margin-top: 100px;
+        
+    }
+
+    h1 {
+        font-size: 1.3em;
+        color: #FFF;
+        background-color: #88BD93;
+        padding: 10px 10px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 1em;
+        padding: 0px 20px;
+    }
+    
+    td {
+        padding: 5px 5px;
+        border-bottom: 1px solid #b1ccb1;
+    }
 }

@@ -6,17 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/seccoes.css">
     <link rel="stylesheet" href="style/med.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Médico Consulta</title>
 </head>
 <body>
 <div class="container">
     <header>
-        <img src="images/logoHpsCompleto.png"></img>
+        <div class="userLogado">
+            <i class="fas fa-user-md"></i>
+            Nome do Médico
+        </div>
+        <img src="images/newLogoCurta.png"></img>
+        <nav>
+            <ul>
+                <a href="medico_dados.php">
+                    <li >Meus Dados</li>
+                </a>
+                <a href="medico_consulta.html">
+                    <li id ="atual">Cadastrar Consulta</li>
+                </a>
+                <a href="medico_historico.html">
+                    <li>Histórico Pacientes</li>
+                </a>                    
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div>
-            <h1>Cadastro de Consultas</h1>
+        <div id="mainWindow">
+            <h1><i class="fas fa-align-left"></i>Cadastro de Consultas</h1>
             <form action="php/medico.php" method="post">
                 <table>
                     <tr>
@@ -42,21 +60,6 @@
             </form>
         </div>
     </main>
-    <aside>
-        <nav>
-            <ul>
-                <a href="medico_dados.php">
-                    <li >Meus Dados</li>
-                </a>
-                <a href="medico_consulta.html">
-                    <li id ="atual">Cadastrar Consulta</li>
-                </a>
-                <a href="medico_historico.html">
-                    <li>Histórico Pacientes</li>
-                </a>                    
-            </ul>
-        </nav>
-    </aside>
 </div>
 </body>
 </html>

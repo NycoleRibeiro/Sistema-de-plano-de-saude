@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/seccoes.css">
     <link rel="stylesheet" href="style/lab.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Laboratório Dados</title>
 </head>
 <body>
 <div class="container">
     <header>
-        <img src="images/logoHpsCompleto.png"></img>
+        <div class="userLogado">
+            <i class="fas fa-flask"></i>
+            Nome do Laboratório
+        </div>
+        <img src="images/newLogoCurta.png"></img>
+        <nav>
+            <ul>
+                <a href="laboratorio_dados.html">
+                    <li id="atual">Meus Dados</li>
+                </a>
+                <a href="laboratorio_exames.html">
+                    <li>Cadastrar Exames</li>
+                </a>                   
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -37,7 +52,7 @@
                     $password = $xml->senha;
                 }
         ?>
-        <div>
+        <div id="mainWindow">
             <h1>Meus Dados</h1>
             <form action="php/laboratorio.php" method="post">
                 <table>
@@ -91,19 +106,6 @@
             </form>
         </div>
     </main>
-
-    <aside>
-        <nav>
-            <ul>
-                <a href="laboratorio_dados.html">
-                    <li id="atual">Meus Dados</li>
-                </a>
-                <a href="laboratorio_exames.html">
-                    <li>Cadastrar Exames</li>
-                </a>                   
-            </ul>
-        </nav>
-    </aside>
 </div>
 </body>
 </html>
