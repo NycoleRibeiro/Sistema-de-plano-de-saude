@@ -17,6 +17,16 @@
     </header>
 
     <main>
+        <?php
+            $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+            if ($erro == 1) {
+                $error = "* Usuário não encontrado *";
+            } else if ($erro == 2) {
+                $error = "* Senha inválida *";
+            } else {
+                $error = "";
+            }
+        ?>
         <nav class="nav_tabs">
             <ul>
                 <!--- Formulário Paciente -->
@@ -24,12 +34,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                     <label for="tab1">Paciente</label>
                     <div class="content_tabs">
-                        <form action="paciente_consultas.php" method="get">
+                        <form action="pdo/validacao.php" method="post">
                             <p>CPF</p>
                             <input type="text" id="valicpf" name="cpf" placeholder="Digite seu CPF" required>
                             <p>Senha</p>
                             <input type="password" id="senhacpf" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" value="OK" type="button" onclick="validacaopac()">
+                            <?php echo "<p class='loginErro'>$error</p>"?>
+                            <input name="login_pac" class="btn_ok" value="OK" type="submit">
                         </form>
                     </div>
                 </li>
@@ -38,12 +49,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                     <label for="tab2">Médico</label>
                     <div class="content_tabs">
-                        <form action="medico_dados.php" method="get">
+                        <form action="pdo/validacao.php" method="post">
                             <p>CRM</p>
                             <input type="text" id="valicrm" name="crm" placeholder="Digite seu CRM" required>
                             <p>Senha</p>
                             <input type="password" id="senhacrm" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" value="OK" type="button" onclick="validacaomed()">
+                            <?php echo "<p class='loginErro'>$error</p>"?>
+                            <input name="login_med" class="btn_ok" value="OK" type="submit">
                         </form>
                     </div>
                 </li>
@@ -52,12 +64,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                     <label for="tab3">Laboratório</label>
                     <div class="content_tabs">
-                        <form action="laboratorio_dados.php" method="get">
+                        <form action="pdo/validacao.php" method="post">
                             <p>CNPJ</p>
                             <input type="text" id="valicnpj" name="cnpj" placeholder="Digite seu CNPJ" required>
                             <p>Senha</p>
                             <input type="password" id="senhacnpj" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" value="OK" type="button" onclick="validacaolab()">
+                            <?php echo "<p class='loginErro'>$error</p>"?>
+                            <input name="login_lab" class="btn_ok" value="OK" type="submit">
                         </form>
                     </div>
                 </li>
@@ -66,12 +79,13 @@
                     <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                     <label for="tab4">Admin</label>
                     <div class="content_tabs">
-                        <form action="administrador_lab.html" method="get">
+                        <form action="pdo/validacao.php" method="post">
                             <p>Login</p>
                             <input id="valiadmin" type="text" name="login" placeholder="Digite seu login" required>
                             <p>Senha</p>
                             <input id="senhaadmin" type="password" name="senha" placeholder="Digite sua senha" required>
-                            <input class="btn_ok" value="OK" type="button" onclick="validacaoadmin()">
+                            <?php echo "<p class='loginErro'>$error</p>"?>
+                            <input name="login_admin" class="btn_ok" value="OK" type="submit">
                         </form>
                     </div>
                 </li>

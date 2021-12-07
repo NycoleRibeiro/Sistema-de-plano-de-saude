@@ -11,10 +11,30 @@
 </head>
 <body>
 <div class="container">
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+        fclose($arquivo);
+
+        $sql = "SELECT * FROM laboratorio WHERE cnpj=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $cnpj = $row['cnpj'];
+            $email = $row['email'];
+            $senha = $row['senha'];
+            $telefone = $row['telefone'];
+            $endereco = $row['endereco'];
+            $tipo_de_exame = $row['tipo_de_exame'];
+        }
+    ?>
     <header>
         <div class="userLogado">
             <i class="fas fa-flask"></i>
-            Nome do Laboratório
+            <?php echo $nome; ?>
         </div>
         <img src="images/newLogoCurta.png"></img>
         <nav>
@@ -30,36 +50,14 @@
     </header>
 
     <main>
-        <?php
-            $LoginAtual = fopen("banco_de_dados/loginLab.txt", "r");
-            $LabLogado = fgets($LoginAtual);
-            fclose($LoginAtual);
-
-            $caminho = "banco_de_dados/laboratorios/".$LabLogado;
-            $xml = simplexml_load_file($caminho . "/dados.xml");
-                if ($xml === false) {
-                    echo "Erro ao carregar XML";
-                    foreach(libxml_get_errors() as $error) {
-                        echo "<br>", $error->message;
-                    }
-                } else {
-                    $labName = $xml->nome;
-                    $cnpj = $xml->cnpj;
-                    $tipo_exame = $xml->tipo_exame;
-                    $email = $xml->email;
-                    $phone = $xml->telefone;
-                    $adress = $xml->endereco;
-                    $password = $xml->senha;
-                }
-        ?>
         <div id="mainWindow">
             <h1>Meus Dados</h1>
-            <form action="php/laboratorio.php" method="post">
+            <form action="pdo/laboratorio.php" method="post">
                 <table>
                     <tr>
                         <td>Laboratório:</td>
                         <td id="labName">
-                            <input type="text" name="labName" value="<?php echo $labName ?>">
+                            <input type="text" name="name" value="<?php echo $nome ?>">
                         </td>
                     </tr>
                     <tr>
@@ -78,25 +76,25 @@
                     <tr>
                         <td>Senha:</td>
                         <td id="senha">
-                            <input type="password" name="password" value="<?php echo $password ?>">
+                            <input type="password" name="password" value="<?php echo $senha ?>">
                         </td>
                     </tr>
                     <tr>
                         <td>Telefone:</td>
                         <td id="phone">
-                            <input type="tel" name="phone" value="<?php echo $phone ?>">
+                            <input type="tel" name="phone" value="<?php echo $telefone ?>">
                         </td>
                     </tr>
                     <tr>
                         <td>Endereço:</td>
                         <td id="adress">
-                            <input type="text" name="address" value="<?php echo $adress ?>">
+                            <input type="text" name="address" value="<?php echo $endereco ?>">
                         </td>
                     </tr>
                     <tr>
                         <td>Tipo de Exames:</td>
                         <td id="examTypes">
-                            <input type="text" name="examTypes" value="<?php echo $tipo_exame ?>">
+                            <input type="text" name="examTypes" value="<?php echo $tipo_de_exame ?>">
                         </td>
                     </tr>
                     <tr>

@@ -97,6 +97,12 @@ input {
     margin: 10px 0;
 }
 
+p.loginErro {
+    font-size: 12px;
+    color: red;
+    text-align: center;
+}
+
 .btn_ok, .btn_true_ok{
     position: absolute;
     background: #4d7e57;

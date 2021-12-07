@@ -10,12 +10,34 @@
 </head>
 <body>
 <div class="container">
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+
+        $sql = "SELECT * FROM paciente WHERE cpf=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $cpf = $row['cpf'];
+            $sexo = $row['sexo'];
+            $nascimento = $row['nascimento'];
+            $telefone = $row['telefone'];
+            $email = $row['email'];
+            $telefone = $row['telefone'];
+            $endereco = $row['endereco'];
+        }
+    ?>
     <header>
         <div class="userLogado">
             <i class="fas fa-user-injured"></i>
-            Nome do Paciente
+            <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="paciente_dados.php">
@@ -37,31 +59,45 @@
             <table>
                 <tr>
                     <td>Nome:</td>
-                    <td id="pacName">NYCOLE RIBEIRO PEREIRA</td>
+                    <td id="pacName">
+                        <?php echo $nome; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>CPF:</td>
-                    <td id="cpf">04265704050</td>
+                    <td id="cpf">
+                        <?php echo $cpf; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Sexo:</td>
-                    <td id="sexo">F</td>
+                    <td id="sexo">
+                        <?php echo $sexo; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Nascimento:</td>
-                    <td id="nascimento">1999-07-19</td>
+                    <td id="nascimento">
+                        <?php echo $nascimento; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td id="email">rpnyck@gmail.com</td>
+                    <td id="email">
+                        <?php echo $email; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Telefone:</td>
-                    <td id="phone">+5553991147808</td>
+                    <td id="phone">
+                        <?php echo $telefone; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Endereço:</td>
-                    <td id="adress">R ENGENHEIRO SÉRGIO LUIZ PERNIGOTTI, 123</td>
+                    <td id="adress">
+                        <?php echo $endereco; ?>
+                    </td>
                 </tr>
             </table>
         </div>

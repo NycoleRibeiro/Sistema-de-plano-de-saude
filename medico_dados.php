@@ -11,12 +11,32 @@
 </head>
 <body>
 <div class="container">
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+
+        $sql = "SELECT * FROM medico WHERE crm=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $crm = $row['crm'];
+            $especialidade = $row['especialidade'];
+            $email = $row['email'];
+            $telefone = $row['telefone'];
+            $endereco = $row['endereco'];
+        }
+    ?>
     <header>
         <div class="userLogado">
             <i class="fas fa-user-md"></i>
-            Nome do Médico
+            <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="medico_dados.php">
@@ -33,34 +53,12 @@
     </header>
 
     <main>
-        <?php
-            // Pega o crm do médico logado
-            $LoginAtual = fopen("banco_de_dados/loginMed.txt", "r");
-            $MedLogado = fgets($LoginAtual);
-            fclose($LoginAtual);
-            // Entrando no arquivo de dados do médico
-            $caminho = "banco_de_dados/medicos/".$MedLogado;
-            $xml = simplexml_load_file($caminho . "/dados.xml");
-                if ($xml === false) {
-                    echo "Erro ao carregar XML";
-                    foreach(libxml_get_errors() as $error) {
-                        echo "<br>", $error->message;
-                    }
-                } else {
-                    $medName = $xml->nome;
-                    $crm = $xml->crm;
-                    $especialidade = $xml->especialidade;
-                    $email = $xml->email;
-                    $phone = $xml->telefone;
-                    $adress = $xml->endereco;
-                }
-        ?>
         <div id="dadosPessoaisWindow">
             <h1><i class="fas fa-user"></i>Meus Dados</h1>
             <table>
                 <tr>
                     <td>Nome:</td>
-                    <td id="medName"><?php echo $medName ?></td>
+                    <td id="medName"><?php echo $nome ?></td>
                 </tr>
                 <tr>
                     <td>CRM:</td>
@@ -76,11 +74,11 @@
                 </tr>
                 <tr>
                     <td>Telefone:</td>
-                    <td id="phone"><?php echo $phone ?></td>
+                    <td id="phone"><?php echo $telefone ?></td>
                 </tr>
                 <tr>
                     <td>Endereço:</td>
-                    <td id="adress"><?php echo $adress ?></td>
+                    <td id="adress"><?php echo $endereco ?></td>
                 </tr>
                 <tr>
                     <td class="btn" colspan="2">
