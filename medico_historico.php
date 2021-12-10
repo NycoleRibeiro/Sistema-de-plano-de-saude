@@ -12,11 +12,31 @@
 <body>
 <div class="container">
     <header>
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+
+        $sql = "SELECT * FROM medico WHERE crm=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $crm = $row['crm'];
+            $especialidade = $row['especialidade'];
+            $email = $row['email'];
+            $telefone = $row['telefone'];
+            $endereco = $row['endereco'];
+        }
+    ?>
         <div class="userLogado">
             <i class="fas fa-user-md"></i>
-            Nome do Médico
+            <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="medico_dados.php">

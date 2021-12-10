@@ -30,7 +30,9 @@
             <i class="fas fa-user-md"></i>
             <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="medico_dados.php">

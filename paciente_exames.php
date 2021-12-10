@@ -15,7 +15,9 @@
             <i class="fas fa-user-injured"></i>
             Nome do Paciente
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="paciente_dados.php">
