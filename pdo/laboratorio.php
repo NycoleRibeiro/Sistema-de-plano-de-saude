@@ -47,11 +47,13 @@
         }
 
         function cadastrarExame($data, $cpf, $tipo_exame, $resultado, $cnpj) {
+            $pdo = require 'connect.php';
+
+            $sql = "INSERT INTO exame (data, cpf_paciente, tipo_de_exame, resultado, cnpj_laboratorio) VALUES ('$data', '$cpf', '$tipo_exame', '$resultado', '$cnpj')";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
             
-            echo '<div class="error"><a href="../laboratorio_exames.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Não existe um paciente com esse CPF</h1></div>';
-            
-            echo '<div class="ok"><a href="../laboratorio_exames.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Exame cadastrado com sucesso!</h1></div>';
-              
+            echo '<div class="ok"><a href="../laboratorio_exames.php"><i class="fas fa-arrow-circle-left"></i></a> <h1>Exame cadastrado com sucesso!</h1></div>';
         }
 
 

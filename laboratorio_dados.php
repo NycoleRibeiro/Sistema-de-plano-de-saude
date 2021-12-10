@@ -42,7 +42,7 @@
                 <a href="laboratorio_dados.php">
                     <li id="atual">Meus Dados</li>
                 </a>
-                <a href="laboratorio_exames.html">
+                <a href="laboratorio_exames.php">
                     <li>Cadastrar Exames</li>
                 </a>                   
             </ul>

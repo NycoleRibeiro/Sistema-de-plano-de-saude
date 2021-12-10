@@ -11,10 +11,25 @@
 </head>
 <body>
 <div class="container">
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+        fclose($arquivo);
+
+        $sql = "SELECT * FROM laboratorio WHERE cnpj=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $cnpj = $row['cnpj'];
+        }
+    ?>
     <header>
         <div class="userLogado">
             <i class="fas fa-flask"></i>
-            Nome do Laboratório
+            <?php echo $nome; ?>
         </div>
         <a href="index.php">
             <img src="images/newLogoCurta.png"></img>
@@ -24,7 +39,7 @@
                 <a href="laboratorio_dados.php">
                     <li>Meus Dados</li>
                 </a>
-                <a href="laboratorio_exames.html">
+                <a href="laboratorio_exames.php">
                     <li id="atual">Cadastrar Exames</li>
                 </a>                   
             </ul>
@@ -34,7 +49,7 @@
     <main>
         <div id="mainWindow">
             <h1>Cadastro de Exames</h1>
-            <form action="php/laboratorio.php" method="post">
+            <form action="pdo/laboratorio.php" method="post">
                 <table>
                     <tr>
                         <td>Data:</td>
