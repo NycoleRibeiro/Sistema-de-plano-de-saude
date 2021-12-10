@@ -22,10 +22,10 @@
                 <a href="medico_dados.php">
                     <li >Meus Dados</li>
                 </a>
-                <a href="medico_consulta.html">
+                <a href="medico_consulta.php">
                     <li>Cadastrar Consulta</li>
                 </a>
-                <a href="medico_historico.html">
+                <a href="medico_historico.php">
                     <li id ="atual">Histórico Pacientes</li>
                 </a>                    
             </ul>
