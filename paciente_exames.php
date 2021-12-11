@@ -71,7 +71,7 @@
                       <p>Resultado: $resultado</p>";
             }
         ?>
-        </div>
-</div>
+    </div>
+    </main>
 </body>
 </html>
