@@ -85,29 +85,6 @@
             header("Location: ../index.php?erro=2");
             return false;
         }
-        /*
-        $pdo = require 'connect.php';
-
-        $sql = "SELECT senha FROM administrador WHERE usuario=$user";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-
-        // Se o $result for vazio, o usuário não existe
-        if (count($result) == 0) {
-            header("Location: ../index.php?erro=1");
-            return false;
-        } else if ($result[0]['senha'] == $senha) {
-            $login = fopen("CurrentUser.txt", "w");
-            fwrite($login, $user);
-            fclose($login);
-            header("Location: ../administrador_paciente.php");
-            return true;
-        } else {
-            header("Location: ../index.php?erro=2");
-            return false;
-        }
-        */
     }
 
 
