@@ -10,10 +10,30 @@
 </head>
 <body>
 <div class="container">
+    <?php
+        $pdo = require 'pdo/connect.php';
+        $arquivo = fopen("pdo/CurrentUser.txt", "r");
+        $userLogado = fgets($arquivo);
+
+        $sql = "SELECT * FROM paciente WHERE cpf=$userLogado";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $nome = $row['nome'];
+            $cpf = $row['cpf'];
+            $sexo = $row['sexo'];
+            $nascimento = $row['nascimento'];
+            $telefone = $row['telefone'];
+            $email = $row['email'];
+            $telefone = $row['telefone'];
+            $endereco = $row['endereco'];
+        }
+    ?>
     <header>
         <div class="userLogado">
             <i class="fas fa-user-injured"></i>
-            Nome do Paciente
+            <?php echo $nome; ?>
         </div>
         <a href="index.php">
             <img src="images/newLogoCurta.png"></img>
@@ -34,30 +54,22 @@
     </header>
 
     <main>
+        <div id="mainWindow">
         <?php
-            $LoginAtual = fopen("banco_de_dados/loginPac.txt", "r");
-            $PacienteLogado = fgets($LoginAtual);
-            fclose($LoginAtual);
-            $dir = "banco_de_dados/pacientes/" . $PacienteLogado;
-            // Lista de consultas
-            $listaDir = scandir($dir);
-            foreach ($listaDir as $consulta) {
-                if ($consulta != "." && $consulta != ".." && $consulta != "dados.xml") {
-                    if ($consulta[0] == "c"){
-                        $consultaDir = $dir . "/" . $consulta;
-                        $consultaXml = simplexml_load_file($consultaDir);
-                        $data = $consultaXml->data;
-                        $paciente = $consultaXml->cpf;
-                        $medico = $consultaXml->medico;
-                        $receita = $consultaXml->receita;
-                        echo "<h1>Consulta do dia {$data}</h1>";
-                        echo "<table><tr><td>Paciente: {$paciente}</td></tr>";
-                        echo "<tr><td>Médico: {$medico}</td></tr>";
-                        echo "<tr><td>Receita: {$receita}</td></tr></table>";
-                    }
-                }
+            $sql = "SELECT * FROM consulta WHERE cpf_paciente=$userLogado";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach ($result as $row) {
+                $data = $row['data'];
+                $medico = $row['crm_medico'];
+                $receita = $row['receita'];
+                echo "<h1>Consulta do dia $data</h1>
+                      <p>Médico: $medico</p>
+                      <p>Receita: $receita</p>";
             }
         ?>
+        </div>
     </main>
 </div>
 </body>
