@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
+<header>
     <?php
         $pdo = require 'pdo/connect.php';
         $arquivo = fopen("pdo/CurrentUser.txt", "r");
@@ -53,20 +53,46 @@
     </header>
 
     <main>
-        <div id="mainWindow">
-            <h1><i class="fas fa-align-left"></i>Histórico do Paciente</h1>
-            <form action="medico_hist_busca.php" method="POST">
-                <table>
-                    <tr>
-                        <td>Digite o CPF do paciente:</td>
-                        <td><input type="text" name="cpf" id="cpf"></td>
-                    </tr>
-                    <tr>
-                        <td class="btn" colspan="2"><input name="verHistorico" class="btn_cadastrar" type="submit" value="Buscar"></td>
-                    </tr>
-                </table>
-            </form>
-       </div>
+        <div id="ConsultasWindow">
+        <h1 class="mainTitle">Histórico de Consultas</h1>
+        <?php
+            $paciente = $_POST['cpf'];
+            $sql = "SELECT * FROM consulta WHERE crm_medico=$userLogado AND cpf_paciente=$paciente";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach ($result as $row) {
+                $data = $row['data'];
+                $medico = $row['crm_medico'];
+                $receita = $row['receita'];
+                $observacao = $row['observacao'];
+                echo "<h1>Consulta do dia $data</h1>
+                      <p>Médico: $medico</p>
+                      <p>Receita: $receita</p>
+                      <p>Observação: $observacao</p>";
+            }
+        ?>
+        </div>
+
+        <div id="ExamesWindow">
+        <h1 class="mainTitle">Histórico de Exames</h1>
+        <?php
+            $sql = "SELECT * FROM exame WHERE cpf_paciente=$paciente";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach ($result as $row) {
+                $data = $row['data'];
+                $laboratorio = $row['cnpj_laboratorio'];
+                $resultado = $row['resultado'];
+                $tipo_de_exame = $row['tipo_de_exame'];
+                echo "<h1>$tipo_de_exame</h1>
+                      <p>Data: $data</p>
+                      <p>Laboratório: $laboratorio</p>
+                      <p>Resultado: $resultado</p>";
+            }
+        ?>
+        </div>
     </main>
 </div>
 </body>

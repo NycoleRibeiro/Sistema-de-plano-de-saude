@@ -143,10 +143,34 @@ a {
     overflow: scroll;
 }
 
-#mainWindow p {
+#mainWindow p, #ConsultasWindow p, #ExamesWindow p {
     width: 100%;
     font-size: 1.2em;
     padding: 0px 30px;
+}
+
+#ConsultasWindow {
+    position: absolute;
+    width: 40vw;
+    max-height: 70vh;
+    left: 9vw;
+    top: 15vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+    overflow: scroll;
+}
+
+#ExamesWindow {
+    position: absolute;
+    width: 40vw;
+    max-height: 70vh;
+    left: 51vw;
+    top: 15vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+    overflow: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -162,6 +186,15 @@ h1 {
     border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+h1.mainTitle {
+    font-size: 1.6em;
+    color: #506d53;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: transparent;
 }
 
 h1 i {
