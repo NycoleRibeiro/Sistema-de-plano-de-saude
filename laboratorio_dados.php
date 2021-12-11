@@ -12,6 +12,7 @@
 <body>
 <div class="container">
     <?php
+        /* PEGANDO OS DADOS DO LABORATÓRIO LOGADO */ 
         $pdo = require 'pdo/connect.php';
         $arquivo = fopen("pdo/CurrentUser.txt", "r");
         $userLogado = fgets($arquivo);
@@ -88,6 +89,7 @@
         </div>
 
         <?php
+            /* ATUALIZAÇÃO DOS CONTADORES DE ACORDO COM DADOS NA TABELA EXAME */
             $cont_anual = 0;
             $cont_mensal = 0;
             $cont_media = 0;
