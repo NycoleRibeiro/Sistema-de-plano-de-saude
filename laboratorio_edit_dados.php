@@ -36,13 +36,15 @@
             <i class="fas fa-flask"></i>
             <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
-                <a href="laboratorio_dados.html">
+                <a href="laboratorio_dados.php">
                     <li id="atual">Meus Dados</li>
                 </a>
-                <a href="laboratorio_exames.html">
+                <a href="laboratorio_exames.php">
                     <li>Cadastrar Exames</li>
                 </a>                   
             </ul>

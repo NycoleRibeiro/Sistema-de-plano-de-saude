@@ -102,39 +102,95 @@
             </table>
         </div>
 
+        <?php
+            $cont_anual = 0;
+            $cont_mensal = 0;
+            $cont_media = 0;
+            $hoje = date("Y-m-d");
+            $data = explode("-", $hoje);
+            $ano = $data[0];
+            $mes = $data[1];
+            $sql = "SELECT data FROM consulta WHERE cpf_paciente=$userLogado";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach ($result as $row) {
+                $data = explode("-", $row['data']);
+                $anoConsulta = $data[0];
+                $mesConsulta = $data[1];
+                if ($ano == $anoConsulta) {
+                    $cont_anual++;;
+                } if ($mes == $mesConsulta && $ano == $anoConsulta) {
+                    $cont_mensal++;
+                }
+            }
+            $cont_media = ceil($cont_anual/$mes);
+        ?>
         <div id="estatisticasConsultasWindow">
             <h1><i class="fas fa-stethoscope"></i>Estatísticas das Consultas</h1>
             <table>
                 <tr>
                     <td>Consultas do Mês:</td>
-                    <td>30</td>
+                    <td>
+                        <?php echo $cont_mensal; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Consultas do Ano:</td>
-                    <td>642</td>
+                    <td>
+                        <?php echo $cont_anual; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Média Mensal:</td>
-                    <td>20</td>
+                    <td>
+                        <?php echo $cont_media; ?>
+                    </td>
                 </tr>
             </table>
         </div>
 
 
+        <?php
+            $cont_anual = 0;
+            $cont_mensal = 0;
+            $cont_media = 0;
+            $sql = "SELECT data FROM exame WHERE cpf_paciente=$userLogado";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach ($result as $row) {
+                $data = explode("-", $row['data']);
+                $anoConsulta = $data[0];
+                $mesConsulta = $data[1];
+                if ($ano == $anoConsulta) {
+                    $cont_anual++;;
+                } if ($mes == $mesConsulta && $ano == $anoConsulta) {
+                    $cont_mensal++;
+                }
+            }
+            $cont_media = ceil($cont_anual/$mes);
+        ?>
         <div id="estatisticasExamesWindow">
             <h1><i class="fas fa-stethoscope"></i>Estatísticas dos Exames</h1>
             <table>
                 <tr>
                     <td>Exames do Mês:</td>
-                    <td>30</td>
+                    <td>
+                        <?php echo $cont_mensal; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Exames do Ano:</td>
-                    <td>642</td>
+                    <td>
+                        <?php echo $cont_anual; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Média Mensal:</td>
-                    <td>20</td>
+                    <td>
+                        <?php echo $cont_media; ?>
+                    </td>
                 </tr>
             </table>
         </div>

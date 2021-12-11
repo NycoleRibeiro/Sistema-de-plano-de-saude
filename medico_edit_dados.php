@@ -36,16 +36,18 @@
             <i class="fas fa-user-md"></i>
             <?php echo $nome; ?>
         </div>
-        <img src="images/newLogoCurta.png"></img>
+        <a href="index.php">
+            <img src="images/newLogoCurta.png"></img>
+        </a>
         <nav>
             <ul>
                 <a href="medico_dados.php">
                     <li id ="atual">Meus Dados</li>
                 </a>
-                <a href="medico_consulta.html">
+                <a href="medico_consulta.php">
                     <li>Cadastrar Consulta</li>
                 </a>
-                <a href="medico_historico.html">
+                <a href="medico_historico.php">
                     <li>Histórico Pacientes</li>
                 </a>                    
             </ul>

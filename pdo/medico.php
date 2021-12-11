@@ -48,10 +48,13 @@
         }
 
         function cadastrarConsulta($data, $cpf, $receita, $observacao, $crm) {
+            $pdo = require 'connect.php';
 
-            echo '<div class="error"><a href="../medico_consulta.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Não existe um paciente com esse CPF</h1></div>';
+            $sql = "INSERT INTO consulta (data, cpf_paciente, receita, observacao, crm_medico) VALUES ('$data', '$cpf', '$receita', '$observacao', '$crm')";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
             
-            echo '<div class="ok"><a href="../medico_consulta.html"><i class="fas fa-arrow-circle-left"></i></a> <h1>Consulta cadastrada com sucesso!</h1></div>';
+            echo '<div class="ok"><a href="../medico_consulta.php"><i class="fas fa-arrow-circle-left"></i></a> <h1>Consulta cadastrada com sucesso!</h1></div>';
         }
 
 
